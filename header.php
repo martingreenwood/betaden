@@ -37,37 +37,49 @@
 		</div>
 	</section>
 
-	<header id="masthead" class="site-header">
-		<div class="container">
-			<div class="row">
+	<?php if (get_field( 'banner_background_image' )):
+		$bannerBG = get_field( 'banner_background_image' );
+	else:
+		$bannerBG = get_stylesheet_directory_uri() . '/assets/img/bg-clouds.jpg';
+	endif 
+	?>
 
-				<div class="site-branding">
-					<?php the_custom_logo( ); ?>
+	<section id="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo $bannerBG; ?>">
+
+		<header id="masthead" class="site-header">
+			<div class="container">
+				<div class="row">
+
+					<div class="site-branding">
+						<?php the_custom_logo( ); ?>
+					</div>
+
+					<nav id="site-navigation" class="main-navigation">
+						<button class="hamburger menu-toggle hamburger--squeeze" type="button" aria-controls="menu-wrap" aria-expanded="false">
+							<span class="hamburger-box ">
+								<span class="hamburger-inner"></span>
+							</span>
+						</button>
+						<div class="menu-wrap">
+							<div class="table">
+								<div class="cell middle">
+									<div class="logo">
+										<?php the_custom_logo( ); ?>
+									</div>
+									<?php
+									wp_nav_menu( array(
+										'theme_location' => 'menu-1',
+										'menu_id'        => 'primary-menu',
+									) );
+									?>
+								</div>
+							</div>
+						</div>
+					</nav>
+				
 				</div>
-
-				<?php
-				/*
-				<nav id="site-navigation" class="main-navigation">
-					<button class="hamburger menu-toggle hamburger--spin" type="button" aria-controls="primary-menu" aria-expanded="false">
-						<span class="hamburger-box ">
-							<span class="hamburger-inner"></span>
-						</span>
-					</button>
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						) );
-					?>
-				</nav>
-				*/
-				?>
-			
 			</div>
-		</div>
-	</header>
-
-	<section id="banner">
+		</header>
 
 		<div class="hero">
 			
@@ -76,15 +88,27 @@
 					<div class="container">
 						<div class="row">
 
-							<div class="content">
+							<div class="content columns five">
 								<h1>
-									A DYNAMIC
-									<br>LAUNCHPAD
-									<br>for tech
-									<br>entrepreneurs
+									<?php the_field( 'banner_text' ); ?>
 								</h1>
-								<a class="applylink" href="#apply" title="Apply online">Register Interest</a><br>
-								<a href="//beta-den.com/wp/wp-content/uploads/2018/06/applicant-info.pdf" target="_blank" title="Download PDF">More Info</a>
+								<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
+								<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
+							</div>
+
+							<div class="blank columns one">
+								&nbsp;
+							</div>
+							
+							<?php 
+							if (get_field( 'banner_hex' )):
+								$hexIMG = get_field( 'banner_hex' );
+							else:
+								$hexIMG = get_template_directory_uri() . '/assets/img/hexagon-header.png';
+							endif;
+							?>
+							<div class="hex columns six">
+								<img src="<?php echo $hexIMG; ?>" alt="">
 							</div>
 
 						</div>
@@ -94,9 +118,8 @@
 
 		</div>
 
-		<div class="tri">
-			<img src="<?php echo get_stylesheet_directory_uri() .'/assets/img/zigzag.png'; ?>" alt="">
-		</div>
+		<div class="tri"></div>
+		<div class="tri2"></div>
 
 	</section>
 

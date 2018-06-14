@@ -36,7 +36,7 @@ get_header(); ?>
 										<element>
 											
 										</element>
-										Our Story
+										<span>Our Story</span>
 									</a>
 								</li>
 								<li>
@@ -44,7 +44,7 @@ get_header(); ?>
 										<element>
 											
 										</element>
-										Events
+										<span>Events</span>
 									</a>
 								</li>
 								<li>
@@ -52,7 +52,7 @@ get_header(); ?>
 										<element>
 											
 										</element>
-										Partners
+										<span>Partners</span>
 									</a>
 								</li>
 								<li>
@@ -60,7 +60,7 @@ get_header(); ?>
 										<element>
 											
 										</element>
-										Mentoring
+										<span>Mentoring</span>
 									</a>
 								</li>
 								<li>
@@ -68,7 +68,7 @@ get_header(); ?>
 										<element>
 											
 										</element>
-										Location
+										<span>Location</span>
 									</a>
 								</li>
 								<li>
@@ -76,7 +76,7 @@ get_header(); ?>
 										<element>
 											
 										</element>
-										Apply
+										<span>Apply</span>
 									</a>
 								</li>
 							</ul>
@@ -93,16 +93,71 @@ get_header(); ?>
 		<div class="content">
 			<div class="container">
 				<div class="row">
-					<article class="">
-						<?php the_field( 'section_three_content' ); ?>
+					<article class="columns five hide">
+						&nbsp;
 					</article>
-					<article class="">
+					<article class="columns seven">
 						<?php the_field( 'section_two_content' ); ?>
 					</article>
 				</div>
 			</div>
 		</div>
 	
+	</div>
+
+	<div id="partners" class="content-area">
+
+		<div class="content">
+			<div class="container">
+				<div class="row">
+					<div class="columns two">
+						&nbsp;
+					</div>
+					<article class="columns eight">
+						<?php the_field( 'section_three_content' ); ?>
+					</article>
+					<div class="columns two">
+						&nbsp;
+					</div>
+				</div>
+				<div class="row">
+					<?php 
+					$images = get_field('partners', 'options');
+					$size = 'full';
+					if( $images ): ?>
+					<ul>
+						<?php foreach( $images as $image ): ?>
+						<li>
+							<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+						</li>
+						<?php endforeach; ?>
+					</ul>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+	<div id="tweet">
+		<div class="content">
+			<div class="table">
+				<div class="cell middle">
+					<div class="container">
+						<div class="row">
+							<div class="columns two">
+								<a href="https://twitter.com/BetaDenUK" target="_blank">
+									<i class="fab fa-twitter"></i>
+								</a>
+							</div>
+							<article class="columns ten">
+								<?php get_template_part( 'template-parts/get', 'tweets' ); ?>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
 	</div>
 
 <?php

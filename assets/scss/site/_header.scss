@@ -51,22 +51,23 @@
 
 
 #masthead {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 4rem;
-	z-index: 99;
-	background-color: transparent;
+	padding: 8rem 0;
+	// position: absolute;
+	// left: 0;
+	// right: 0;
+	// top: 4rem;
+	// z-index: 99;
+	// background-color: transparent;
 
-	@media (#{$bp-larger-than-desktop}) {
-		top: 8rem;
-	}
+	// @media (#{$bp-larger-than-desktop}) {
+	// 	top: 8rem;
+	// }
 
-	-webkit-transition: top .5s linear 0s, background 0.5s linear 0s;
-	-moz-transition: top .5s linear 0s, background 0.5s linear 0s;
-	-ms-transition: top .5s linear 0s, background 0.5s linear 0s;
-	-o-transition: top .5s linear 0s, background 0.5s linear 0s;
-	transition: top .5s linear 0s, background 0.5s linear 0s;
+	// -webkit-transition: top .5s linear 0s, background 0.5s linear 0s;
+	// -moz-transition: top .5s linear 0s, background 0.5s linear 0s;
+	// -ms-transition: top .5s linear 0s, background 0.5s linear 0s;
+	// -o-transition: top .5s linear 0s, background 0.5s linear 0s;
+	// transition: top .5s linear 0s, background 0.5s linear 0s;
 
 	.site-branding {
 		float: left;

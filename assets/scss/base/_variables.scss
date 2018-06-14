@@ -13,8 +13,8 @@ $bp-larger-than-desktophd : "min-width: 1360px" !default;
 // Colors
 $light-grey: #eeeeee !default;
 $dark-grey: #3d3d3d !default;
-$primary-color: orange !default;
-$secondary-color: red !default;
+$primary-color: #f26522 !default;
+$secondary-color: #fef4ee !default;
 $border-color: #eee !default;
 $link-color: $primary-color !default;
 $font-color: $dark-grey !default;
@@ -29,7 +29,7 @@ $heading-font-family: $heading-font !default;
 $nav-font-family: $heading-font !default;
 
 //Grid Variables
-$container-width: 1760px !default;
+$container-width: 1300px !default;
 $container-width-larger-than-mobile: 85% !default;
 $container-width-larger-than-phablet: 80% !default;
 $total-columns: 12 !default;

@@ -21,14 +21,15 @@ img {
 }
 
 #content {
-	background-image: url(assets/img/mobile-bg.png);
-	background-size: 100% auto;
-	background-position: top center;
-	background-repeat: no-repeat;
+	background-color: white;
+	// background-image: url(assets/img/mobile-bg.png);
+	// background-size: 100% auto;
+	// background-position: top center;
+	// background-repeat: no-repeat;
 
 	@media (#{$bp-larger-than-tablet}) {
-		background-position: bottom center;
-		background-image: url(assets/img/diagonal.png);
+		// background-position: bottom center;
+		// background-image: url(assets/img/diagonal.png);
 	}
 }
 
@@ -44,10 +45,10 @@ img {
 	#content {
 
 		@media (#{$bp-larger-than-tablet}) {
-			background-size: 100% auto;
-			background-position: top center;
-			background-repeat: no-repeat;
-			background-image: url(assets/img/home-bg.jpg);
+			// background-size: 100% auto;
+			// background-position: top center;
+			// background-repeat: no-repeat;
+			// background-image: url(assets/img/home-bg.jpg);
 		}
 	}
 }
@@ -135,100 +136,75 @@ img {
 
 #banner {
 	position: relative;
-	height: 100vh;
-	max-height: 1280px;
-	min-height: 500px;
-	max-height: 500px;
+	// height: 100vh;
+	// max-height: 1280px;
+	// min-height: 500px;
+	// max-height: 500px;
 
-	@media (#{$bp-larger-than-tablet}) {
-		height: 100vh;
-		// min-height: 1000px;
-		max-height: 100vh;
+	// @media (#{$bp-larger-than-tablet}) {
+	// 	height: 100vh;
+	// 	// min-height: 1000px;
+	// 	max-height: 100vh;
+	// }
+
+	// @media (#{$bp-larger-than-desktop}) {
+	// 	height: 80vh;
+	// 	min-height: 1000px;
+	// 	max-height: 1280px;
+	// }
+
+	.tri {
+		background: transparent;
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-bottom: 300px solid white;
+		border-left: 100vw solid transparent;
 	}
 
-	@media (#{$bp-larger-than-desktop}) {
-		height: 80vh;
-		min-height: 1000px;
-		max-height: 1280px;
+	.tri2 {
+		background: transparent;
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-bottom: 200px solid white;
+		border-right: 450px solid transparent;
 	}
 
-	background: url(assets/img/bg-clouds.jpg);
-	background-position: center;
-	background-size: cover;
-	// overflow: hidden;
-
-	.images {
-		position: relative;
+	.hex {
 		z-index: 1;
-		display: inline-block;
-		vertical-align: middle;
-		width: 50%;
+		position: relative;
+		margin-bottom: -7rem;
 
 		img {
+			margin-top: -18rem;
 			display: block;
-			width: 100%;
 		}
 	}
 
 	.content {
-		display: inline-block;
-		vertical-align: middle;
-		position: relative;
-		z-index: 3;
+		// display: inline-block;
+		// vertical-align: middle;
+		// position: relative;
+		// z-index: 3;
 
-		@media (#{$bp-larger-than-tablet}) {
-			width: 43%;
-		}
+		// @media (#{$bp-larger-than-tablet}) {
+		// 	width: 43%;
+		// }
 		
-		@media (#{$bp-larger-than-desktop}) {
-			width: 43%;
-		}
-	}
-
-	.tri {
-		position: absolute;
-		bottom: -5px;
-		width: 100%;
-
-		img {
-			display: block;
-			width: 100%;
-		}
-	}
-
-	.tri1 {
-		background: white;
-		width: 400px;
-		height: 400px;
-		position: absolute;
-		bottom: -305px;
-		left: -160px;
-		transform: rotate(25deg);
-	}
-
-	.tri2 {
-		width: 930px;
-		height: 990px;
-		background: white;
-		position: absolute;
-		bottom: -700px;
-		left: 380px;
-		transform: rotate(60deg);
-	}
-
-	.tri3 {
-		width: 370px;
-		height: 220px;
-		background: white;
-		position: absolute;
-		bottom: 0;
-		right: 0;
+		// @media (#{$bp-larger-than-desktop}) {
+		// 	width: 43%;
+		// }
 	}
 
 	.hero {
-		position: absolute;
-		width: 100%;
-		height: 100%;
+		// position: absolute;
+		// width: 100%;
+		// height: 100%;
+
+		padding: 8rem 0 10rem 0;
 
 		h1 {		
 			font-size: 3rem;	
@@ -238,8 +214,9 @@ img {
 			}
 
 			@media (#{$bp-larger-than-desktop}) {
-				font-size: 6rem;
+				font-size: 5.5rem;
 			}
+			
 			color: white;
 			text-transform: uppercase;
 			line-height: 1;
@@ -256,15 +233,18 @@ img {
 			border-radius: 4px;
 			padding: 0 10px;
 			font-size: 1.5rem;
+			width: 55%;
 			color: white;
 			text-decoration: none;
 			display: inline-block;
 			text-transform: uppercase;
-			line-height: 4rem;
+			line-height: 2.5;
 			margin-bottom: 10px;
+			text-align: center;
+			z-index: 1;
+			position: relative;
 
 			@media (#{$bp-larger-than-desktop}) {
-				padding: 0 20px;
 				margin-right: 10px;
 				font-size: 2rem;
 				// margin-bottom: 0;
@@ -275,7 +255,7 @@ img {
 
 #intro {
 	position: relative;
-	padding: 80px 0 0 0;
+	padding: 100px 0;
 	z-index: 1;
 	text-align: center;
 
@@ -297,6 +277,39 @@ img {
 			}
 		}
 	}
+
+	.quicklinks {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			margin: 0;
+
+			a {
+				text-decoration: none;
+			}
+
+			span {
+				margin-top: 1rem;
+				text-transform: uppercase;
+				display: block;
+			}
+
+			element {
+				display: block;
+				width: 195px;
+				height: 205px;
+				background-image: url(assets/img/tech.jpg);
+				background-size: cover;
+				
+				-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+			}
+		}
+	}
 }
 
 #primary {
@@ -306,19 +319,6 @@ img {
 	.content {
 		
 		article {
-			text-align: center;
-			width: 100%;
-			padding: 40px;
-			box-sizing: border-box;
-			float: left;
-
-			@media (#{$bp-larger-than-tablet}) {
-				width: 50%;
-
-				&:first-of-type {
-					border-right: 2px solid $primary-color;
-				}
-			}
 		}
 
 		h1 {
@@ -329,6 +329,73 @@ img {
 
 			@media (#{$bp-larger-than-tablet}) {
 				font-size: 4rem;
+			}
+		}
+	}
+}
+
+#partners {
+	position: relative;
+	padding: 100px 0;
+
+	.content {
+		
+		article {
+			text-align: center;
+		}
+
+		h1 {
+			color: black;
+			margin-bottom: 2rem;
+			font-size: 3rem;
+			text-transform: capitalize;
+
+			@media (#{$bp-larger-than-tablet}) {
+				font-size: 4rem;
+			}
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+
+			li {
+				display: inline-block;
+				width: 20%;
+				margin: 0;
+			}
+		}
+	}
+}
+
+#tweet {
+	padding: 100px 0;
+	position: relative;
+
+	.two {
+		border-right: 2px solid $primary-color;
+		padding: 3rem 0;
+
+		.fa-twitter {
+			font-size: 76px;
+			color: black;
+		}
+	}
+
+	.ten {
+		padding: 2rem 0;
+
+		.date {
+			color: $primary-color;
+		}
+
+		p {
+			margin-bottom: 2rem;
+
+			&:last-of-type {
+				margin-bottom: 0;
 			}
 		}
 	}

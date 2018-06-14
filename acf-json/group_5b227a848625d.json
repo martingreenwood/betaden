@@ -1,0 +1,91 @@
+{
+    "key": "group_5b227a848625d",
+    "title": "Banner",
+    "fields": [
+        {
+            "key": "field_5b227a8c360ad",
+            "label": "Banner Background Image",
+            "name": "banner_background_image",
+            "type": "image",
+            "instructions": "Please add a background image to the slider - we will set a default one if you do not.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5b227ab7360ae",
+            "label": "Banner Text",
+            "name": "banner_text",
+            "type": "textarea",
+            "instructions": "Please add a title \/ header - we will honour 'line breaks' but please don't add HTML.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5b227bd4360b0",
+            "label": "Banner Hex",
+            "name": "banner_hex",
+            "type": "image",
+            "instructions": "Please add a Hex image to the banner - we will set a default one if you do not.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1528986852
+}
