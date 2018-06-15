@@ -182,20 +182,20 @@ if( function_exists('acf_add_options_page') ) {
 /**
  * Custom Post Typs
  */
-// function downloads_cpt() {
-// 	register_post_type( 'downloads',
-// 		array(
-// 			'labels' => array(
-// 				'name' => __( 'Downloads' ),
-// 				'singular_name' => __( 'Download' )
-// 			),
-// 			'public' => true,
-// 			'has_archive' => false,
-// 			'supports' => array('title'),
-// 		)
-// 	);
-// }
-// add_action( 'init', 'downloads_cpt' );
+function betaden_cpts() {
+	register_post_type( 'mentors',
+		array(
+			'labels' => array(
+				'name' => __( 'Mentors' ),
+				'singular_name' => __( 'Mentors' )
+			),
+			'public' => true,
+			'has_archive' => false,
+			'supports' => array('title', 'editor', 'thumbnail'),
+		)
+	);
+}
+add_action( 'init', 'betaden_cpts' );
 
 
 /**

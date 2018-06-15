@@ -114,9 +114,11 @@ function betaden_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
 	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'gmap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDxP3OTTogYZecLv64jOhYRh4ZLHm28wqg', array(), '5.0.3', true );
 	wp_enqueue_script( 'fa', 'https://use.fontawesome.com/releases/v5.0.3/js/all.js', array(), '5.0.3', true );
 	wp_enqueue_script( 'para', get_template_directory_uri() . '/assets/js/parallax.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'nav', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'maps', get_template_directory_uri() . '/assets/js/map.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'base', get_template_directory_uri() . '/assets/js/base-min.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'betaden_scripts' );

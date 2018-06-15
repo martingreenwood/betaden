@@ -92,8 +92,10 @@
 								<h1>
 									<?php the_field( 'banner_text' ); ?>
 								</h1>
-								<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
-								<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
+								<?php if ( is_home() ): ?>
+									<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
+									<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
+								<?php endif; ?>
 							</div>
 
 							<div class="blank columns one">
