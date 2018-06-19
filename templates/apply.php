@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Location
+ * Template Name: Apply
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -33,25 +33,14 @@ get_header();
 			
 	</div>
 
-	<div id="location">
+	<div id="apply">
 
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
 					<div class="container">
 						<div class="row">
-							<div class="columns two">
-								&nbsp;
-							</div>
-							<div class="columns ten">
-								<?php $location = get_field('location');
-								if( !empty($location) ):
-								?>
-								<div class="map">
-									<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
-								</div>
-								<?php endif; ?>
-							</div>
+							<?php echo do_shortcode( '[gravityform id="1" title="false" description="false"]' ); ?>
 						</div>
 					</div>
 				</div>

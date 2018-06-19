@@ -63,6 +63,45 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/acf-json\/group_5b279ebcd5596.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_5b279ebcd5596-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/acf-json\/group_5b27b16717147.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_5b27b16717147-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/acf-json\/group_5b27b71df145a.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_5b27b71df145a-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/acf-json\/group_5b27be7d2d871.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_5b27be7d2d871-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/archive-tc_events.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/archive-tc_events.php",
+		"oF": 0
+		},
 	"\/archive.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -193,17 +232,6 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/assets\/img\/bg-clouds2.jpg": {
-		"ft": 16384,
-		"iS": 162472,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/assets\/img\/bg-clouds2.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"\/assets\/img\/big-square-arange.jpg": {
 		"ft": 16384,
 		"iS": 58288,
@@ -213,17 +241,6 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"q": 100
-		},
-	"\/assets\/img\/bottom-section.png": {
-		"ft": 32768,
-		"iS": 42171,
-		"oA": 0,
-		"oAP": "\/assets\/img\/bottom-section.png",
-		"oF": 0,
-		"oIPL": 1,
-		"opt": 1,
-		"oT": 1,
 		"q": 100
 		},
 	"\/assets\/img\/diagonal.png": {
@@ -237,7 +254,7 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/assets\/img\/hexagon-header.png": {
+	"\/assets\/img\/Hexagon-Header.png": {
 		"ft": 32768,
 		"iS": 516949,
 		"oA": 0,
@@ -247,16 +264,6 @@
 		"opt": 1,
 		"oT": 1,
 		"q": 100
-		},
-	"\/assets\/img\/hexagon.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/assets\/img\/hexagon.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
 		},
 	"\/assets\/img\/Hexagon1.png": {
 		"ft": 32768,
@@ -280,15 +287,15 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/assets\/img\/home-bg.jpg": {
-		"ft": 16384,
-		"iS": 323303,
-		"jF": 0,
+	"\/assets\/img\/marker.png": {
+		"ft": 32768,
+		"iS": 35656,
 		"oA": 0,
-		"oAP": "\/assets\/img\/home-bg.jpg",
+		"oAP": "\/assets\/img\/marker.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/assets\/img\/mid-section.jpg": {
@@ -318,6 +325,17 @@
 		"iS": 65312,
 		"oA": 0,
 		"oAP": "\/assets\/img\/mobile-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/orange-halfhex.png": {
+		"ft": 32768,
+		"iS": 23835,
+		"oA": 0,
+		"oAP": "\/assets\/img\/orange-halfhex.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -377,17 +395,6 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
-		"q": 100
-		},
-	"\/assets\/img\/zigzag.png": {
-		"ft": 32768,
-		"iS": 17647,
-		"oA": 0,
-		"oAP": "\/assets\/img\/zigzag.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
 		"q": 100
 		},
 	"\/assets\/js\/base-min.js": {
@@ -2784,6 +2791,13 @@
 		"oAP": "\/comments.php",
 		"oF": 0
 		},
+	"\/events.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/events.php",
+		"oF": 0
+		},
 	"\/footer.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2956,6 +2970,13 @@
 		"oAP": "\/sidebar.php",
 		"oF": 0
 		},
+	"\/single-mentors.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/single-mentors.php",
+		"oF": 0
+		},
 	"\/single.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2972,6 +2993,13 @@
 		"oAP": "\/style-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"\/template-parts\/content-event.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/template-parts\/content-event.php",
+		"oF": 0
 		},
 	"\/template-parts\/content-none.php": {
 		"cB": 0,
@@ -2992,6 +3020,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/template-parts\/content-search.php",
+		"oF": 0
+		},
+	"\/template-parts\/content-single-mentor.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/template-parts\/content-single-mentor.php",
 		"oF": 0
 		},
 	"\/template-parts\/content-single.php": {
@@ -3015,11 +3050,25 @@
 		"oAP": "\/template-parts\/get-tweets.php",
 		"oF": 0
 		},
+	"\/templates\/apply.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/apply.php",
+		"oF": 0
+		},
 	"\/templates\/location.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/location.php",
+		"oF": 0
+		},
+	"\/templates\/mentors.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/mentors.php",
 		"oF": 0
 		}
 	},

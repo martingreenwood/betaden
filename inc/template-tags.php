@@ -194,6 +194,17 @@ function betaden_cpts() {
 			'supports' => array('title', 'editor', 'thumbnail'),
 		)
 	);
+	register_post_type( 'partners',
+		array(
+			'labels' => array(
+				'name' => __( 'Partners' ),
+				'singular_name' => __( 'Partner' )
+			),
+			'public' => true,
+			'has_archive' => false,
+			'supports' => array('title', 'editor', 'thumbnail'),
+		)
+	);
 }
 add_action( 'init', 'betaden_cpts' );
 

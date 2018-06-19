@@ -26,15 +26,15 @@
 
 (function($){
 
-    $('a.applylink').on('click', function(event) {
-        event.preventDefault();
-        $('#apply').slideToggle('fast');
-    });
+    // $('a.applylink').on('click', function(event) {
+    //     event.preventDefault();
+    //     $('#apply').slideToggle('fast');
+    // });
 
-    $('a#cancel').on('click', function(event) {
-    	event.preventDefault();
-    	$('#apply').slideToggle('fast');
-    });
+    // $('a#cancel').on('click', function(event) {
+    // 	event.preventDefault();
+    // 	$('#apply').slideToggle('fast');
+    // });
 	
 })(jQuery);
 

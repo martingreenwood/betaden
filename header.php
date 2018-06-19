@@ -23,20 +23,6 @@
 <body <?php body_class($pagename); ?>>
 <div id="page" class="site">
 
-	<section id="apply" style="display: none;">
-		<div class="table">
-			<div class="cell middle">
-				<div class="container">
-					<div class="row">
-						<?php the_custom_logo( ); ?>
-						<?php echo do_shortcode( '[gravityform id="1" title="false" description="false" ajax="true"]' ); ?>
-						<a href="#" id="cancel" title="">Close</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<?php if (get_field( 'banner_background_image' )):
 		$bannerBG = get_field( 'banner_background_image' );
 	else:
@@ -90,7 +76,11 @@
 
 							<div class="content columns five">
 								<h1>
-									<?php the_field( 'banner_text' ); ?>
+									<?php if (get_field( 'banner_tect' )): ?>
+										<h1><?php the_field( 'banner_text' ); ?></h1>
+									<?php else: ?>
+										<h1>INFORMED<br>ADVICE & <br>direction</h1>
+									<?php endif ?>
 								</h1>
 								<?php if ( is_home() ): ?>
 									<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>

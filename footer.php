@@ -25,10 +25,17 @@
 					<div class="copyright">
 						<ul>
 							<li>&copy; BetaDen <?php echo date('Y') ?>. All rights reserved</li>
-							<li><a href="<?php echo home_url( 'privacy' ); ?>">Privacy Policy</a></li>
-							<!-- <li><a href="<?php echo home_url( 'cookies' ); ?>">Cookies</a></li> -->
-							<li><a class="applylink" href="#apply">Apply Online</a></li>
 						</ul>
+						<?php 
+						wp_nav_menu( array(
+							'theme_location'  => 'menu-2',
+							'menu'            => '',
+							'container'       => '',
+							'container_class' => '',
+							'container_id'    => '',
+							'menu_class'      => 'menu',
+							'menu_id'         => 'footer-menu',
+						) );; ?>
 					</div>
 
 				</div>

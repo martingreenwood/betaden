@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('columns seven'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('columns eight'); ?>>
 
 	<div class="entry-content">
 		<?php
