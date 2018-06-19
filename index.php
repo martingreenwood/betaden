@@ -20,39 +20,21 @@ get_header(); ?>
 
 				<?php
 				if ( have_posts() ) :
+				?>
+				<div class="row">
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
-					if ( is_home() && ! is_front_page() ) : ?>
-					<header class="row">
-						<center>
-							<h1 class="page-title"><?php single_post_title(); ?></h1>
-						</center>
-					</header>
-					<?php
-					endif;
-					?>
-					<div class="row">
-					<?php
-					/* Start the Loop */
-					$counter = 1;
-					while ( have_posts() ) : the_post();
+					get_template_part( 'template-parts/content', get_post_format() );
 
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'template-parts/content', get_post_format() );
-
-						if ($counter % 4 === 0) echo '</div><div class="row">';
-
-					$counter++; endwhile;
-					?>
-					</div>
-					<?php
+				endwhile;
+				?>
+				</div>
+				<?php
 				endif; ?>
-			</div>
 
-			<div class="container">
+
 				<div class="row">
 					<?php the_posts_navigation(); ?>
 				</div>

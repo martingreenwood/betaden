@@ -36,6 +36,7 @@ get_header(); ?>
 						<div class="row post-navigation">
 							<div class="navi previous">
 								<?php $prevPost = get_previous_post(); ?>
+								<?php if ($prevPost): ?>
 								<a href="<?php echo get_the_permalink( $prevPost->ID ); ?>" title="">
 									<?php $prevImg = get_the_post_thumbnail_url( $prevPost->ID, 'full' ); ?>
 									<element style="background-image: url(<?php echo $prevImg; ?>)"></element>
@@ -44,6 +45,7 @@ get_header(); ?>
 										<h4><?php the_field( 'company_name', $prevPost->ID ); ?></h4>
 									</div>
 								</a>
+								<?php endif ?>
 							</div><!--
 						 --><div class="navi next">
 								<?php $nextPost = get_next_post(); ?>

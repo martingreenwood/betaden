@@ -9,31 +9,23 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('columns three'); ?>>
-
-	<?php betaden_post_thumbnail(); ?>
-	
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-		?>
-	</header>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="entry-content">
-		<?php 
-		/**
-		* Custom Excerpt Length WordPress using wp_trim_excerpt()
-		* Use directly in template
-		*/
-
+		<h1 class="entry-title">
+			<a href="<?php the_permalink( ) ?>">
+			<?php the_title(); ?>
+			</a>
+		</h1>
+		<p><?php 
 		$content = get_the_content();
-		echo wp_trim_words( $content , '20' ); 
-		?>
-		<a class="more" href="<?php the_permalink( ) ?>" title="Read More">Read More</a>
+		echo wp_trim_words( $content , '40' ); 
+		?></p>
+		<p><a class="more" href="<?php the_permalink( ) ?>" title="Read More">Read More</a></p>
+	</div><!--
+	<?php $blogImg = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
+	--><div class="thumb">
+		<element style="background-image: url(<?php echo $blogImg; ?>);"></element>
 	</div>
 
 </article><!-- #post-<?php the_ID(); ?> -->

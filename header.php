@@ -76,13 +76,13 @@
 
 							<div class="content columns five">
 								<h1>
-									<?php if (get_field( 'banner_tect' )): ?>
+									<?php if (get_field( 'banner_text' )): ?>
 										<h1><?php the_field( 'banner_text' ); ?></h1>
 									<?php else: ?>
 										<h1>INFORMED<br>ADVICE & <br>direction</h1>
 									<?php endif ?>
 								</h1>
-								<?php if ( is_home() ): ?>
+								<?php if ( is_front_page() ): ?>
 									<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
 									<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
 								<?php endif; ?>
