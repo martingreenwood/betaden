@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="intro">
 		<div class="table">
 			<div class="cell middle">
-				<div class="container">
+				<!-- <div class="container"> -->
 					<div class="row">
 						<article class="content columns eight">
 							<h1>Our events</h1>
@@ -24,7 +24,7 @@ get_header(); ?>
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</article>
 					</div>
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>
@@ -32,7 +32,7 @@ get_header(); ?>
 	<div id="filter">
 		<div class="table">
 			<div class="cell middle">
-				<div class="container">
+				<!-- <div class="container"> -->
 					<div class="row">
 						<div class="columns twelve">
 							<ul>
@@ -42,13 +42,13 @@ get_header(); ?>
 							</ul>
 						</div>
 					</div>
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main container">
+		<main id="main" class="site-main">
 
 			<?php
 				if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -68,7 +68,7 @@ get_header(); ?>
 	<div id="getinvolved">
 		<div class="table">
 			<div class="cell middle">
-				<div class="container">
+				<!-- <div class="container"> -->
 					<div class="row">
 						<div class="content columns eight">
 							<h1>Get involved</h1>
@@ -84,7 +84,7 @@ get_header(); ?>
 							</ul>
 						</div>
 					</div>
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>

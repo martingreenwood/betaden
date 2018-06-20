@@ -21,7 +21,7 @@
 </head>
 
 <body <?php body_class($pagename); ?>>
-<div id="page" class="site">
+<div id="page" class="site container">
 
 	<?php if (get_field( 'banner_background_image' )):
 		$bannerBG = get_field( 'banner_background_image' );
@@ -30,9 +30,7 @@
 	endif 
 	?>
 
-	<section id="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo $bannerBG; ?>">
-
-		<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header">
 			<div class="container">
 				<div class="row">
 
@@ -67,21 +65,23 @@
 			</div>
 		</header>
 
-		<div class="hero">
+	<!-- <section id="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo $bannerBG; ?>"> -->
+	<section id="banner">
+
+		<div class="hero container" style="background-image: url(<?php echo $bannerBG; ?>)">
 			
 			<div class="table">
 				<div class="cell middle">
-					<div class="container">
+					<div>
+					<!-- <div class="container"> -->
 						<div class="row">
 
 							<div class="content columns five">
-								<h1>
-									<?php if (get_field( 'banner_text' )): ?>
-										<h1><?php the_field( 'banner_text' ); ?></h1>
-									<?php else: ?>
-										<h1>INFORMED<br>ADVICE & <br>direction</h1>
-									<?php endif ?>
-								</h1>
+								<?php if (get_field( 'banner_text' )): ?>
+									<h1><?php the_field( 'banner_text' ); ?></h1>
+								<?php else: ?>
+									<h1>INFORMED<br>ADVICE & <br>direction</h1>
+								<?php endif ?>
 								<?php if ( is_front_page() ): ?>
 									<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
 									<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
@@ -110,9 +110,11 @@
 
 		</div>
 
-		<div class="tri"></div>
-		<div class="tri2"></div>
+		
 
 	</section>
 
 	<div id="content" class="site-content">
+
+		<div class="tri"></div>
+		<div class="tri2"></div>

@@ -110,7 +110,7 @@
 		border-radius: 0;
 		height: inherit;
 		position: absolute;
-		right: 0;
+		right: 4rem;
 		bottom: 30px;
 		z-index: 99;
 
@@ -177,4 +177,8 @@
 			}
 		}
 	}
+}
+
+.shorty .hamburger-inner, .shorty .hamburger-inner::before, .shorty .hamburger-inner::after {
+	background: $primary-color;
 }

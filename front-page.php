@@ -19,7 +19,7 @@ get_header(); ?>
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<div class="container">
+					<!-- <div class="container"> -->
 						<div class="row">
 							<?php
 							while ( have_posts() ) : the_post();
@@ -81,7 +81,7 @@ get_header(); ?>
 								</li>
 							</ul>
 						</div>
-					</div>
+					<!-- </div> -->
 				</div>
 			</div>
 		</div>
@@ -91,7 +91,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 
 		<div class="content">
-			<div class="container">
+			<!-- <div class="container"> -->
 				<div class="row">
 					<article class="columns five hide">
 						&nbsp;
@@ -100,7 +100,7 @@ get_header(); ?>
 						<?php the_field( 'section_two_content' ); ?>
 					</article>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 	
 	</div>
@@ -108,7 +108,7 @@ get_header(); ?>
 	<div id="partners" class="content-area">
 
 		<div class="content">
-			<div class="container">
+			<!-- <div class="container"> -->
 				<div class="row">
 					<div class="columns two">
 						&nbsp;
@@ -134,7 +134,7 @@ get_header(); ?>
 					</ul>
 					<?php endif; ?>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 	
 	</div>
@@ -143,7 +143,7 @@ get_header(); ?>
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<div class="container">
+					<!-- <div class="container"> -->
 						<div class="row">
 							<div class="columns two">
 								<a href="https://twitter.com/BetaDenUK" target="_blank">
@@ -154,7 +154,7 @@ get_header(); ?>
 								<?php get_template_part( 'template-parts/get', 'tweets' ); ?>
 							</article>
 						</div>
-					</div>
+					<!-- </div> -->
 				</div>
 			</div>
 		</div>			

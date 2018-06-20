@@ -17,24 +17,24 @@
 
 (function($){
 
-    $('.hamburger').on('click', function(event) {
-        event.preventDefault();
-        $(this).toggleClass('is-active');
-    });
-    
+	$('.hamburger').on('click', function(event) {
+		event.preventDefault();
+		$(this).toggleClass('is-active');
+	});
+	
 })(jQuery);
 
 (function($){
 
-    // $('a.applylink').on('click', function(event) {
-    //     event.preventDefault();
-    //     $('#apply').slideToggle('fast');
-    // });
+	// $('a.applylink').on('click', function(event) {
+	//     event.preventDefault();
+	//     $('#apply').slideToggle('fast');
+	// });
 
-    // $('a#cancel').on('click', function(event) {
-    // 	event.preventDefault();
-    // 	$('#apply').slideToggle('fast');
-    // });
+	// $('a#cancel').on('click', function(event) {
+	// 	event.preventDefault();
+	// 	$('#apply').slideToggle('fast');
+	// });
 	
 })(jQuery);
 
@@ -44,27 +44,27 @@
 
 (function($){
 
-    $('img[src$=".svg"]').each(function() {
-        var $img = jQuery(this);
-        var imgURL = $img.attr('src');
-        var attributes = $img.prop("attributes");
+	$('img[src$=".svg"]').each(function() {
+		var $img = jQuery(this);
+		var imgURL = $img.attr('src');
+		var attributes = $img.prop("attributes");
 
-        $.get(imgURL, function(data) {
-            // Get the SVG tag, ignore the rest
-            var $svg = jQuery(data).find('svg');
+		$.get(imgURL, function(data) {
+			// Get the SVG tag, ignore the rest
+			var $svg = jQuery(data).find('svg');
 
-            // Remove any invalid XML tags
-            $svg = $svg.removeAttr('xmlns:a');
+			// Remove any invalid XML tags
+			$svg = $svg.removeAttr('xmlns:a');
 
-            // Loop through IMG attributes and apply on SVG
-            $.each(attributes, function() {
-                $svg.attr(this.name, this.value);
-            });
+			// Loop through IMG attributes and apply on SVG
+			$.each(attributes, function() {
+				$svg.attr(this.name, this.value);
+			});
 
-            // Replace IMG with SVG
-            $img.replaceWith($svg);
-        }, 'xml');
-    });
+			// Replace IMG with SVG
+			$img.replaceWith($svg);
+		}, 'xml');
+	});
 	
 })(jQuery);
 
@@ -80,13 +80,17 @@
 
 (function($) {
 
-	// var $document = $(document),
-	// $element = $('#masthead'),
-	// header = $('#masthead');
+	var $document = $(document),
+	$element = $('#banner'),
+	$header = $('#masthead');
 
-	// $document.scroll(function() {
-	// 	$element.toggleClass('hidden', $document.scrollTop() >= 99);
-	// });
+	$document.scroll(function() {
+		$element.toggleClass('shorty', $document.scrollTop() >= 1);
+	});
+
+	$document.scroll(function() {
+		$header.toggleClass('shorty', $document.scrollTop() >= 1);
+	});
 
 	// $document.scroll(function() {
 	// 	//$element.toggleClass('fixed', $document.scrollTop() >= $(window).height());

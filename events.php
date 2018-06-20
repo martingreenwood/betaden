@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="intro">
 		<div class="table">
 			<div class="cell middle">
-				<div class="content container">
+				<div class="content">
 					<div class="row">
 						<?php
 							if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -30,7 +30,7 @@ get_header(); ?>
 	<div id="filter">
 		<div class="table">
 			<div class="cell middle">
-				<div class="container">
+				<!-- <div class="container"> -->
 					<div class="row">
 						<div class="columns twelve">
 							<ul>
@@ -40,13 +40,13 @@ get_header(); ?>
 							</ul>
 						</div>
 					</div>
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main container">
+		<main id="main" class="site-main">
 
 			
 
@@ -56,7 +56,7 @@ get_header(); ?>
 	<div id="getinvolved">
 		<div class="table">
 			<div class="cell middle">
-				<div class="container">
+				<!-- <div class="container"> -->
 					<div class="row">
 						<div class="content columns eight">
 							<h1>Get involved</h1>
@@ -72,7 +72,7 @@ get_header(); ?>
 							</ul>
 						</div>
 					</div>
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</div>

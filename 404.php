@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<div class="container">
+			<!-- <div class="container"> -->
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -21,7 +21,7 @@ get_header(); ?>
 
 				</article>
 
-			</div>
+			<!-- </div> -->
 		</main>
 	</div>
 
