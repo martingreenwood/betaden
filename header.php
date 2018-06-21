@@ -58,11 +58,17 @@
 		</div>
 	</header>
 
-	<?php if (get_field( 'banner_background_image', get_the_ID() )):
-		$bannerBG = get_field( 'banner_background_image', get_the_ID() );
+	<?php 
+	if (is_home()):
+		$bannerBG = get_field( 'banner_background_image', get_option( 'page_for_posts' ) );
 	else:
-		$bannerBG = get_stylesheet_directory_uri() . '/assets/img/bg-clouds.jpg';
-	endif 
+		if ( get_field( 'banner_background_image', get_the_ID() ) ):
+			$bannerBG = get_field( 'banner_background_image', get_the_ID() );
+		else:
+			$bannerBG = get_stylesheet_directory_uri() . '/assets/img/bg-clouds.jpg';
+
+		endif;
+	endif;
 	?>
 
 	<section id="banner">
@@ -76,11 +82,16 @@
 						<div class="row">
 
 							<div class="content">
-								<?php if (get_field( 'banner_text', get_the_ID() )): ?>
-									<h1><?php the_field( 'banner_text', get_the_ID() ); ?></h1>
+								<?php if (is_home()): ?>
+									<h1><?php the_field( 'banner_text', get_option( 'page_for_posts' ) ); ?></h1>
 								<?php else: ?>
-									<h1>INFORMED<br>ADVICE & <br>direction</h1>
-								<?php endif ?>
+									<?php if (get_field( 'banner_text', get_the_ID() )): ?>
+										<h1><?php the_field( 'banner_text', get_the_ID() ); ?></h1>
+									<?php else: ?>
+										<h1>INFORMED<br>ADVICE & <br>DIRECTION</h1>
+									<?php endif; ?>
+								<?php endif; ?>
+
 								<?php if ( is_front_page() ): ?>
 									<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
 									<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
@@ -88,10 +99,14 @@
 							</div><!--
 						 --><div class="hex">
 							 	<?php 
-								if (get_field( 'banner_hex', get_the_ID() )):
-									$hexIMG = get_field( 'banner_hex', get_the_ID() );
-								else:
-									$hexIMG = get_template_directory_uri() . '/assets/img/hexagon-header.png';
+							 	if (is_home()):
+							 		$hexIMG = get_field( 'banner_hex', get_option( 'page_for_posts' ) );
+						 		else:
+									if (get_field( 'banner_hex', get_the_ID() )):
+										$hexIMG = get_field( 'banner_hex', get_the_ID() );
+									else:
+										$hexIMG = get_template_directory_uri() . '/assets/img/hexagon-header.png';
+									endif;
 								endif;
 								?>
 								<img src="<?php echo $hexIMG; ?>" alt="">
