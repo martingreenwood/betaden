@@ -23,49 +23,48 @@
 <body <?php body_class($pagename); ?>>
 <div id="page" class="site container">
 
-	<?php if (get_field( 'banner_background_image' )):
-		$bannerBG = get_field( 'banner_background_image' );
+	<header id="masthead" class="site-header">
+		<div class="container">
+			<div class="row">
+
+				<div class="site-branding">
+					<?php the_custom_logo( ); ?>
+				</div>
+
+				<nav id="site-navigation" class="main-navigation">
+					<button class="hamburger menu-toggle hamburger--squeeze" type="button" aria-controls="menu-wrap" aria-expanded="false">
+						<span class="hamburger-box ">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+					<div class="menu-wrap">
+						<div class="table">
+							<div class="cell middle">
+								<div class="logo">
+									<?php the_custom_logo( ); ?>
+								</div>
+								<?php
+								wp_nav_menu( array(
+									'theme_location' => 'menu-1',
+									'menu_id'        => 'primary-menu',
+								) );
+								?>
+							</div>
+						</div>
+					</div>
+				</nav>
+			
+			</div>
+		</div>
+	</header>
+
+	<?php if (get_field( 'banner_background_image', get_the_ID() )):
+		$bannerBG = get_field( 'banner_background_image', get_the_ID() );
 	else:
 		$bannerBG = get_stylesheet_directory_uri() . '/assets/img/bg-clouds.jpg';
 	endif 
 	?>
 
-	<header id="masthead" class="site-header">
-			<div class="container">
-				<div class="row">
-
-					<div class="site-branding">
-						<?php the_custom_logo( ); ?>
-					</div>
-
-					<nav id="site-navigation" class="main-navigation">
-						<button class="hamburger menu-toggle hamburger--squeeze" type="button" aria-controls="menu-wrap" aria-expanded="false">
-							<span class="hamburger-box ">
-								<span class="hamburger-inner"></span>
-							</span>
-						</button>
-						<div class="menu-wrap">
-							<div class="table">
-								<div class="cell middle">
-									<div class="logo">
-										<?php the_custom_logo( ); ?>
-									</div>
-									<?php
-									wp_nav_menu( array(
-										'theme_location' => 'menu-1',
-										'menu_id'        => 'primary-menu',
-									) );
-									?>
-								</div>
-							</div>
-						</div>
-					</nav>
-				
-				</div>
-			</div>
-		</header>
-
-	<!-- <section id="banner" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo $bannerBG; ?>"> -->
 	<section id="banner">
 
 		<div class="hero container" style="background-image: url(<?php echo $bannerBG; ?>)">
@@ -77,8 +76,8 @@
 						<div class="row">
 
 							<div class="content">
-								<?php if (get_field( 'banner_text' )): ?>
-									<h1><?php the_field( 'banner_text' ); ?></h1>
+								<?php if (get_field( 'banner_text', get_the_ID() )): ?>
+									<h1><?php the_field( 'banner_text', get_the_ID() ); ?></h1>
 								<?php else: ?>
 									<h1>INFORMED<br>ADVICE & <br>direction</h1>
 								<?php endif ?>
@@ -89,8 +88,8 @@
 							</div><!--
 						 --><div class="hex">
 							 	<?php 
-								if (get_field( 'banner_hex' )):
-									$hexIMG = get_field( 'banner_hex' );
+								if (get_field( 'banner_hex', get_the_ID() )):
+									$hexIMG = get_field( 'banner_hex', get_the_ID() );
 								else:
 									$hexIMG = get_template_directory_uri() . '/assets/img/hexagon-header.png';
 								endif;
