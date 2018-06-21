@@ -76,7 +76,7 @@
 					<!-- <div class="container"> -->
 						<div class="row">
 
-							<div class="content columns five">
+							<div class="content">
 								<?php if (get_field( 'banner_text' )): ?>
 									<h1><?php the_field( 'banner_text' ); ?></h1>
 								<?php else: ?>
@@ -86,20 +86,15 @@
 									<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
 									<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
 								<?php endif; ?>
-							</div>
-
-							<div class="blank columns one">
-								&nbsp;
-							</div>
-							
-							<?php 
-							if (get_field( 'banner_hex' )):
-								$hexIMG = get_field( 'banner_hex' );
-							else:
-								$hexIMG = get_template_directory_uri() . '/assets/img/hexagon-header.png';
-							endif;
-							?>
-							<div class="hex columns six">
+							</div><!--
+						 --><div class="hex">
+							 	<?php 
+								if (get_field( 'banner_hex' )):
+									$hexIMG = get_field( 'banner_hex' );
+								else:
+									$hexIMG = get_template_directory_uri() . '/assets/img/hexagon-header.png';
+								endif;
+								?>
 								<img src="<?php echo $hexIMG; ?>" alt="">
 							</div>
 

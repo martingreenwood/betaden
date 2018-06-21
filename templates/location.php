@@ -42,10 +42,7 @@ get_header();
 					<div>
 					<!-- <div class="container"> -->
 						<div class="row">
-							<div class="columns two">
-								&nbsp;
-							</div>
-							<div class="columns ten">
+							<div class="columns twelve">
 								<?php $location = get_field('location');
 								if( !empty($location) ):
 								?>
