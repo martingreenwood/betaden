@@ -966,6 +966,7 @@ img {
 				.gform_page_footer .button.gform_next_button,
 				.gform_page_footer .button.gform_previous_button {
 					width: 48% !important;
+					line-height: 48px;
 					float: left;
 					margin: 0 !important;
 					background: white;
@@ -1038,6 +1039,17 @@ img {
 
 
 .contact {
+
+	#intro {
+		padding: 0;
+	}
+
+	.gform_wrapper {
+		
+		textarea, select, input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+			border: 1px solid $primary-color;
+		}
+	}
 
 	#primary {
 		background-image: url(assets/img/orange-halfhex.png);
