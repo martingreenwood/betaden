@@ -853,7 +853,8 @@ img {
 	}
 
 	#apply {
-		background: rgba($primary-color, 1);
+		background-color: rgba($primary-color, 1);
+		background-image: url(assets/img/bg-clouds.jpg);
 		color: white;
 		position: fixed;
 		top: 0;
@@ -986,10 +987,11 @@ img {
 	}
 
 	#colophon {
-		position: absolute;
+		position: fixed;
 		bottom: 0;
 		width: 100%;
 		z-index: 6;
+		left: 0;
 	}
 }
 
