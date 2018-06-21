@@ -21,7 +21,7 @@
 </head>
 
 <body <?php body_class($pagename); ?>>
-<div id="page" class="site container">
+<div id="page" class="site">
 
 	<header id="masthead" class="site-header">
 		<div class="container">
@@ -73,12 +73,11 @@
 
 	<section id="banner">
 
-		<div class="hero container" style="background-image: url(<?php echo $bannerBG; ?>)">
+		<div class="hero" style="background-image: url(<?php echo $bannerBG; ?>)">
 			
 			<div class="table">
 				<div class="cell middle">
-					<div>
-					<!-- <div class="container"> -->
+					<div class="container">
 						<div class="row">
 
 							<div class="content">
@@ -127,3 +126,5 @@
 
 		<div class="tri"></div>
 		<div class="tri2"></div>
+
+		<div class="container">

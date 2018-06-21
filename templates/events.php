@@ -53,26 +53,23 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+</div><!-- .container -->
+
+<div> <?php // hack to make container end early ?>
 	<div id="getinvolved">
 		<div class="table">
 			<div class="cell middle">
-				<!-- <div class="container"> -->
+				<div class="container">
 					<div class="row">
 						<div class="content columns eight">
-							<h1>Get involved</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<?php the_field( 'section_two_content' ); ?>
 							<ul>
 								<li><a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">Find Out More</a></li>
 								<li><a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a></li>
 							</ul>
 						</div>
 					</div>
-				<!-- </div> -->
+				</div>
 			</div>
 		</div>
 	</div>
