@@ -415,7 +415,13 @@ img {
 }
 
 #getinvolved {
-	background: $primary-color;
+	background-color: $primary-color;
+	
+	background-image: url(assets/img/orange-otherhalfhex.png);
+	background-position: right center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+
 	color: white;
 	padding: 8rem 0;
 
