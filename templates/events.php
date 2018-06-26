@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="intro">
 		<div class="table">
 			<div class="cell middle">
-				<div class="content">
+				<div class="content container">
 					<div class="row">
 						<?php
 							if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -30,91 +30,102 @@ get_header(); ?>
 	<div id="filter">
 		<div class="table">
 			<div class="cell middle">
-				<!-- <div class="container"> -->
+				<div class="container">
 					<div class="row">
 						<div class="columns twelve">
 							<ul>
-								<li><a href="#all" class="all" title="Show All">All Events</a></li>
-								<li><a href="#all" class="all" title="Show All">Open Events</a></li>
-								<li><a href="#all" class="all" title="Show All">Invitation Only</a></li>
+								<?php 
+								$terms = get_terms(array(
+									'taxonomy' => 'eventbrite_category',
+									'hide_empty' => false,
+								));
+								?>
+								<li><a href="#" data-tax="all" title="Show All">All Events</a></li>
+								<?php foreach ($terms as $term): ?>
+								<li><a href="#" data-tax="<?php echo $term->slug; ?>" title="Show <?php echo $term->name ?>"><?php echo $term->name; ?></a></li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 					</div>
-				<!-- </div> -->
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			<div class="container">
+				<div class="row">
+					<?php
+						$args = array(
+							'post_type'   		=> 'eventbrite_events',
+							'posts_per_page' 	=> -1,
+							'order' 			=> 'ASC',
+							'meta_key' 			=> 'start_ts',
+						);
 
-			<?php
-				// Set up and call our Eventbrite query.
-				$events = new Eventbrite_Query( apply_filters( 'eventbrite_query_args', array(
-					'display_private' => true, // boolean
-					// 'status' => 'live',         // string (only available for display_private true)
-					// 'nopaging' => false,        // boolean
-					// 'limit' => null,            // integer
-					// 'organizer_id' => null,     // integer
-					// 'p' => null,                // integer
-					// 'post__not_in' => null,     // array of integers
-					// 'venue_id' => null,         // integer
-					// 'category_id' => null,      // integer
-					// 'subcategory_id' => null,   // integer
-					// 'format_id' => null,        // integer
-				) ) );
+						$testimonials = new WP_Query( $args );
+						if( $testimonials->have_posts() ) :
+						?>
+						<?php
+							while( $testimonials->have_posts() ) : $testimonials->the_post();
+								
+								$event_id = get_the_ID();
+								$start_date_str = get_post_meta( $event_id, 'start_ts', true );
+								$end_date_str = get_post_meta( $event_id, 'end_ts', true );
+								$start_date_formated = date_i18n( 'F j Y', $start_date_str );
+								$end_date_formated = date_i18n( 'F j Y', $end_date_str );
+								$start_time = date_i18n( 'h:i a', $start_date_str );
+								$end_time = date_i18n( 'h:i a', $end_date_str );
+								$website = get_post_meta( $event_id, 'iee_event_link', true );
 
-				if ( $events->have_posts() ) :
-					while ( $events->have_posts() ) : $events->the_post(); ?>
+								if ($start_date_formated == $end_date_formated) {
+									$event_date = $end_date_formated;
+								} else {
+									$event_date = $start_date_formated ." - ". $end_date_formated;
+								}
 
-						<article id="event">
+								$cat = get_the_terms( $event_id, 'eventbrite_category' );
+								$cat = current($cat);
+								
+							?>
+							<article class="event show" data-tax="<?php echo $cat->slug; ?>">
 
-							<div class="entry-content">
-								<h1 class="entry-title">
-									<a href="<?php the_permalink( ) ?>">
-									<?php the_title(); ?>
-									</a>
-								</h1>
-								<h3><?php eventbrite_event_meta(); ?></h3>
-								<p><?php 
-								$content = get_the_content();
-								echo wp_trim_words( $content , '40' ); 
-								?></p>
-								<p><a class="more" href="<?php the_permalink( ) ?>" title="Read More">Read More</a></p>
-							</div><!--
-							--><div class="thumb">
-								<?php $blogImg = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
-								<?php $img = get_the_post_thumbnail(  ); ?>
-								<?php $img = explode('"', $img) ?>
-								<element style="background-image: url(<?php echo $img[5]; ?>);">
-									
-								</element>
-							</div>
+								<div class="entry-content">
+									<h1 class="entry-title">
+										<a href="<?php the_permalink( ) ?>">
+										<?php the_title(); ?>
+										</a>
+									</h1>
+									<h3>
+										<?php echo $event_date; ?> | <?php echo $start_time; ?> - <?php echo $end_time; ?>
+									</h3>
+									<p><?php 
+									$content = get_the_content();
+									echo wp_trim_words( $content , '40' ); 
+									?></p>
+									<p><a class="more" target="_blank" href="<?php echo $website; //the_permalink(); ?>" title="Read More">View Event</a></p>
+								</div><!--
+								--><div class="thumb">
+									<?php $blogImg = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
+									<element style="background-image: url(<?php echo $blogImg; ?>);">
+									</element>
+								</div>
 
-						</article><!-- #post-<?php the_ID(); ?> -->
-
-
-					<?php endwhile;
-
-					// Previous/next post navigation.
-					eventbrite_paging_nav( $events );
-
-				else :
-					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
-
-				endif;
-
-				// Return $post to its rightful owner.
-				wp_reset_postdata();
-			?>
-
+							</article>
+							<?php
+							endwhile;
+							wp_reset_postdata();
+							?>
+					<?php endif; ?>
+				</div>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-</div><!-- .container -->
+<!-- </div> .container -->
 
-<div> <?php // hack to make container end early ?>
+<!-- <div> <?php // hack to make container end early ?> -->
 
 	<div id="getinvolved">
 		<div class="table">

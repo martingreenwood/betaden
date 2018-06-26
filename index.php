@@ -16,7 +16,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<!-- <div class="container"> -->
+			<div class="container">
 
 				<?php
 				if ( have_posts() ) :
@@ -39,7 +39,7 @@ get_header(); ?>
 					<?php the_posts_navigation(); ?>
 				</div>
 			
-			<!-- </div> -->
+			</div>
 		</main>
 	</div>
 

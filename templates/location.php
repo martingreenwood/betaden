@@ -16,8 +16,7 @@ get_header();
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<div>
-					<!-- <div class="container"> -->
+					<div class="container">
 						<div class="row">
 							<?php
 							while ( have_posts() ) : the_post();
@@ -39,8 +38,7 @@ get_header();
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<div>
-					<!-- <div class="container"> -->
+					<div class="container">
 						<div class="row">
 							<div class="columns twelve">
 								<?php $location = get_field('location');

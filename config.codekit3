@@ -2815,20 +2815,6 @@
 		"oAP": "\/comments.php",
 		"oF": 0
 		},
-	"\/eventbrite\/eventbrite-index.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/eventbrite\/eventbrite-index.php",
-		"oF": 0
-		},
-	"\/eventbrite\/eventbrite-single.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/eventbrite\/eventbrite-single.php",
-		"oF": 0
-		},
 	"\/footer.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -3001,6 +2987,13 @@
 		"oAP": "\/sidebar.php",
 		"oF": 0
 		},
+	"\/single-eventbrite_events.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/single-eventbrite_events.php",
+		"oF": 0
+		},
 	"\/single-mentors.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -3058,6 +3051,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/template-parts\/content-search.php",
+		"oF": 0
+		},
+	"\/template-parts\/content-single-event.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/template-parts\/content-single-event.php",
 		"oF": 0
 		},
 	"\/template-parts\/content-single-mentor.php": {

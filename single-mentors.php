@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<!-- <div class="container"> -->
+			<div class="container">
 				
 				<div class="row">
 					<?php
@@ -23,7 +23,7 @@ get_header(); ?>
 					?>
 				</div>
 			
-			<!-- </div> -->
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
@@ -32,7 +32,7 @@ get_header(); ?>
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<!-- <div class="container"> -->
+					<div class="container">
 						<div class="row post-navigation">
 							<div class="navi previous">
 								<?php $prevPost = get_previous_post(); ?>
@@ -61,7 +61,7 @@ get_header(); ?>
 								<?php endif ?>
 							</div>
 						</div>
-					<!-- </div> -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -74,7 +74,7 @@ get_header(); ?>
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<!-- <div class="container"> -->
+					<div class="container">
 						<div class="row">
 							<div class="columns four">
 								&nbsp;
@@ -83,7 +83,7 @@ get_header(); ?>
 								<?php the_field( 'becoming_a_mentor_content', $mentorspage ); ?>
 							</div>
 						</div>
-					<!-- </div> -->
+					</div>
 				</div>
 			</div>
 		</div>

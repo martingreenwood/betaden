@@ -19,7 +19,7 @@ get_header(); ?>
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<!-- <div class="container"> -->
+					<div class="container">
 						<div class="row">
 							<?php
 							while ( have_posts() ) : the_post();
@@ -69,7 +69,7 @@ get_header(); ?>
 								</li>
 							</ul>
 						</div>
-					<!-- </div> -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -79,7 +79,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 
 		<div class="content">
-			<!-- <div class="container"> -->
+			<div class="container">
 				<div class="row">
 					<article class="columns five hide">
 						&nbsp;
@@ -88,7 +88,7 @@ get_header(); ?>
 						<?php the_field( 'section_two_content' ); ?>
 					</article>
 				</div>
-			<!-- </div> -->
+			</div>
 		</div>
 	
 	</div>
@@ -96,7 +96,7 @@ get_header(); ?>
 	<div id="partners" class="content-area">
 
 		<div class="content">
-			<!-- <div class="container"> -->
+			<div class="container">
 				<div class="row">
 					<div class="columns two">
 						&nbsp;
@@ -109,20 +109,70 @@ get_header(); ?>
 					</div>
 				</div>
 				<div class="row">
-					<?php 
-					$images = get_field('partners', 'options');
-					$size = 'full';
-					if( $images ): ?>
-					<ul>
-						<?php foreach( $images as $image ): ?>
-						<li>
-							<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
-						</li>
-						<?php endforeach; ?>
-					</ul>
-					<?php endif; ?>
+				<?php
+					$args = array(
+						'post_type'   		=> 'eventbrite_events',
+						'posts_per_page' 	=> 1,
+						'order' 			=> 'ASC',
+						'meta_key' 			=> 'start_ts',
+					);
+
+					$testimonials = new WP_Query( $args );
+					if( $testimonials->have_posts() ) :
+					?>
+					<?php
+					while( $testimonials->have_posts() ) : $testimonials->the_post();
+						
+						$event_id = get_the_ID();
+						$start_date_str = get_post_meta( $event_id, 'start_ts', true );
+						$end_date_str = get_post_meta( $event_id, 'end_ts', true );
+						$start_date_formated = date_i18n( 'F j Y', $start_date_str );
+						$end_date_formated = date_i18n( 'F j Y', $end_date_str );
+						$start_time = date_i18n( 'h:i a', $start_date_str );
+						$end_time = date_i18n( 'h:i a', $end_date_str );
+						$website = get_post_meta( $event_id, 'iee_event_link', true );
+
+						if ($start_date_formated == $end_date_formated) {
+							$event_date = $end_date_formated;
+						} else {
+							$event_date = $start_date_formated ." - ". $end_date_formated;
+						}
+
+						$cat = get_the_terms( $event_id, 'eventbrite_category' );
+						$cat = current($cat);
+						
+					?>
+					<div class="event show" data-tax="<?php echo $cat->slug; ?>">
+
+						<div class="entry-content">
+							<h1 class="entry-title">
+								<a href="<?php the_permalink( ) ?>">
+								<?php the_title(); ?>
+								</a>
+							</h1>
+							<h3>
+								<?php echo $event_date; ?> | <?php echo $start_time; ?> - <?php echo $end_time; ?>
+							</h3>
+							<p><?php 
+							$content = get_the_content();
+							echo wp_trim_words( $content , '40' ); 
+							?></p>
+							<p><a class="more" target="_blank" href="<?php echo $website; //the_permalink(); ?>" title="Read More">View Event</a></p>
+						</div><!--
+						--><div class="thumb">
+							<?php $blogImg = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
+							<element style="background-image: url(<?php echo $blogImg; ?>);">
+							</element>
+						</div>
+
+					</div>
+					<?php
+					endwhile;
+					wp_reset_postdata();
+				endif;
+				?>
 				</div>
-			<!-- </div> -->
+			</div>
 		</div>
 	
 	</div>
@@ -131,7 +181,7 @@ get_header(); ?>
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<!-- <div class="container"> -->
+					<div class="container">
 						<div class="row">
 							<div class="columns two">
 								<a href="https://twitter.com/BetaDenUK" target="_blank">
@@ -142,7 +192,7 @@ get_header(); ?>
 								<?php get_template_part( 'template-parts/get', 'tweets' ); ?>
 							</article>
 						</div>
-					<!-- </div> -->
+					</div>
 				</div>
 			</div>
 		</div>			

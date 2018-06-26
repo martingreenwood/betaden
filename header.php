@@ -95,23 +95,9 @@
 									<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
 									<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
 								<?php endif; ?>
-							</div><!--
-						 --><div class="hex">
-							 	<?php 
-							 	if (is_home()):
-							 		$hexIMG = get_field( 'banner_hex', get_option( 'page_for_posts' ) );
-						 		else:
-									if (get_field( 'banner_hex', get_the_ID() )):
-										$hexIMG = get_field( 'banner_hex', get_the_ID() );
-									else:
-										$hexIMG = get_template_directory_uri() . '/assets/img/hexagon-header.png';
-									endif;
-								endif;
-								?>
-								<img src="<?php echo $hexIMG; ?>" alt="">
 							</div>
 
-						</div>
+						 </div>
 					</div>	
 				</div>
 			</div>
@@ -126,5 +112,19 @@
 
 		<div class="tri"></div>
 		<div class="tri2"></div>
+		<div class="hex">
+		 	<?php 
+		 	if (is_home()):
+		 		$hexIMG = get_field( 'banner_hex', get_option( 'page_for_posts' ) );
+	 		else:
+				if (get_field( 'banner_hex', get_the_ID() )):
+					$hexIMG = get_field( 'banner_hex', get_the_ID() );
+				else:
+					$hexIMG = get_template_directory_uri() . '/assets/img/hexagon-header.png';
+				endif;
+			endif;
+			?>
+			<img src="<?php echo $hexIMG; ?>" alt="">
+		</div>
 
-		<div class="container">
+		<div class="main-container">

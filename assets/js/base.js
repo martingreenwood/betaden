@@ -26,10 +26,17 @@
 
 (function($){
 
-	// $('a.applylink').on('click', function(event) {
-	//     event.preventDefault();
-	//     $('#apply').slideToggle('fast');
-	// });
+	$('#filter ul li a').on('click', function(event) {
+		event.preventDefault();
+		$('article').addClass('show');
+
+		var target = $(this).data('tax');
+		$('*[data-tax!="'+target+'"]').removeClass('show');
+	});
+
+	$('#filter ul li a[data-tax="all"]').on('click', function(event) {
+		$('article').addClass('show');
+	});
 
 	// $('a#cancel').on('click', function(event) {
 	// 	event.preventDefault();
