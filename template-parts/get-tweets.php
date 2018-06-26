@@ -21,14 +21,14 @@
 	// endif;
 
 	function getConnectionWithAccessToken($cons_key, $cons_secret, $oauth_token, $oauth_token_secret) {
-			$connection = new TwitterOAuth($cons_key, $cons_secret, $oauth_token, $oauth_token_secret);
+			$connection = new TwitterTOAuth($cons_key, $cons_secret, $oauth_token, $oauth_token_secret);
 		return $connection;
 	}
 
 	$connection = getConnectionWithAccessToken($consumerkey, $consumersecret, $accesstoken, $accesstokensecret);
 	$tweets = $connection->get("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name= ".$twitteruser." &count=1");
 	//$tweets = $connection->get("https://api.twitter.com/1.1/search/tweets.json?q=%23rampsonthemoon+OR+%23".$search_tag);
-	
+
 	// foreach ($tweets->statuses as $tweet):
 	foreach ($tweets as $tweet): ?>
 		<?php //print_r($tweet); 

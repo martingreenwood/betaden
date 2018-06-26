@@ -2815,6 +2815,20 @@
 		"oAP": "\/comments.php",
 		"oF": 0
 		},
+	"\/eventbrite\/eventbrite-index.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/eventbrite\/eventbrite-index.php",
+		"oF": 0
+		},
+	"\/eventbrite\/eventbrite-single.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/eventbrite\/eventbrite-single.php",
+		"oF": 0
+		},
 	"\/footer.php": {
 		"cB": 0,
 		"ft": 8192,
