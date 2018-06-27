@@ -14,6 +14,17 @@
 
 get_header(); ?>
 
+	<div class="alert">
+		<div class="box">
+			<h3>Lorem Ipsum</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+			<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a>
+			<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
+		</div>
+	</div>
+
 	<div id="intro">
 
 		<div class="content">
