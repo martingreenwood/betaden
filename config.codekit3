@@ -247,6 +247,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/img\/events-hex.png": {
+		"ft": 32768,
+		"iS": 1081059,
+		"oA": 0,
+		"oAP": "\/assets\/img\/events-hex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/img\/Hexagon-Header.png": {
 		"ft": 32768,
 		"iS": 516949,
@@ -280,11 +291,33 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/img\/location-hex.png": {
+		"ft": 32768,
+		"iS": 542267,
+		"oA": 0,
+		"oAP": "\/assets\/img\/location-hex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/img\/marker.png": {
 		"ft": 32768,
 		"iS": 35656,
 		"oA": 0,
 		"oAP": "\/assets\/img\/marker.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/mentoring-hex.png": {
+		"ft": 32768,
+		"iS": 212240,
+		"oA": 0,
+		"oAP": "\/assets\/img\/mentoring-hex.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -346,6 +379,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/img\/partners-hex.png": {
+		"ft": 32768,
+		"iS": 544489,
+		"oA": 0,
+		"oAP": "\/assets\/img\/partners-hex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/img\/slash.png": {
 		"ft": 32768,
 		"iS": 17727,
@@ -384,6 +428,17 @@
 		"iS": 51455,
 		"oA": 0,
 		"oAP": "\/assets\/img\/square-orange.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/story-hex.png": {
+		"ft": 32768,
+		"iS": 594534,
+		"oA": 0,
+		"oAP": "\/assets\/img\/story-hex.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

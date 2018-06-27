@@ -33,37 +33,41 @@ get_header(); ?>
 							<ul class="quicklinks">
 								<li>
 									<a href="<?php echo home_url( 'our-story' ); ?>" title="">
-										<element style="background-image: url( <?php echo get_stylesheet_directory_uri(); ?>/assets/img/tech.jpg);"></element>
+										<element>
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/story-hex.png" alt="">
+										</element>
 										<span>Our Story</span>
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo home_url( 'events' ); ?>" title="">
-										<element style="background-image: url( <?php echo get_stylesheet_directory_uri(); ?>/assets/img/tech.jpg);"></element>
+										<element>
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/events-hex.png" alt="">
+										</element>
 										<span>Events</span>
 									</a>
 								</li>
 								<li>
-									<a href="<?php echo home_url( 'partners' ); ?>" title="">
-										<element style="background-image: url( <?php echo get_stylesheet_directory_uri(); ?>/assets/img/tech.jpg);"></element>
-										<span>Partners</span>
-									</a>
-								</li>
-								<li>
 									<a href="<?php echo home_url( 'mentoring' ); ?>" title="">
-										<element style="background-image: url( <?php echo get_stylesheet_directory_uri(); ?>/assets/img/tech.jpg);"></element>
+										<element>
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/mentoring-hex.png" alt="">
+										</element>
 										<span>Mentoring</span>
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo home_url( 'location' ); ?>" title="">
-										<element style="background-image: url( <?php echo get_stylesheet_directory_uri(); ?>/assets/img/tech.jpg);"></element>
+										<element>
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/location-hex.png" alt="">
+										</element>
 										<span>Location</span>
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo home_url( 'apply' ); ?>" title="">
-										<element style="background-image: url( <?php echo get_stylesheet_directory_uri(); ?>/assets/img/tech.jpg);"></element>
+										<element>
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Hexagon1.png" alt="">
+										</element>
 										<span>Apply</span>
 									</a>
 								</li>

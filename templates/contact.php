@@ -16,7 +16,7 @@ get_header();
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<!-- <div class="container"> -->
+					<div class="container">
 						<div class="row">
 							<?php
 							while ( have_posts() ) : the_post();
@@ -27,7 +27,7 @@ get_header();
 							?>
 						</div>
 					</div>
-				<!-- </div> -->
+				</div>
 			</div>
 		</div>
 			
@@ -37,13 +37,16 @@ get_header();
 	<div id="primary" class="content-area">
 
 		<div class="content">
-			<!-- <div class="container"> -->
+			<div class="container">
 				<div class="row">
-					<article class="columns five hide">
+					<article class="columns two hide">
 						&nbsp;
 					</article>
-					<article class="columns seven">
+					<article class="columns eight">
 						<?php echo do_shortcode( '[gravityform id="2" title="false" description="false" ajax="true"]' ); ?>
+					</article>
+					<article class="columns two hide">
+						&nbsp;
 					</article>
 				</div>
 			<!-- </div> -->
