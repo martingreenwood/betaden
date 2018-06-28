@@ -51,13 +51,14 @@ body {
 			background-size: 100% auto;
 			background-repeat: no-repeat;
 			border-radius: 4px;
-			padding: 4rem;
+			padding: 2rem;
 			box-sizing: border-box;
 			padding-top: 24rem;
 
 			@media (#{$bp-larger-than-tablet}) {
 				padding-top: 40rem;
 				width: 100%;
+				padding: 4rem;
 			}
 
 			h3 {
@@ -77,10 +78,13 @@ body {
 				text-decoration: none;
 				margin-top: 2rem;
 				width: 100%;
+				box-sizing: border-box;
 				text-align: center;
+				font-size: 1.2rem;
 
 				@media (#{$bp-larger-than-tablet}) {
 					width: 35%;
+					font-size: 1.6em;
 				}
 			}
 		}
