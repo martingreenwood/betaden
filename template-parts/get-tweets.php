@@ -6,10 +6,10 @@
 	// TWITTER OAUTH SETTINGS
 	$twitteruser = "BetaDenUK";
 	$notweets = 1;
-	$consumerkey = "QIPyndGX6yRAAsepjkGJ52j3W";
-	$consumersecret = "zwNtKcbIUzloKbq8rI8JRQmWVYXvKugn0zmcJATGelXgQZcWaY";
-	$accesstoken = "983642923773329408-1JEIgo73yNAzY485KZlJGNqIjv977Ti";
-	$accesstokensecret = "YOuL36dEDPD4uS9e2qbLQTjSDPMDoNmoIZAeyMzYv1fWQ";
+	$consumerkey = "JXE165IUhfnzdItOFEAUVMics";
+	$consumersecret = "rNGEJBIOjEFXg9dgse2SbZqr9o82RILuaXOZmVNsutHCfODy6y";
+	$accesstoken = "2831854230-NZKYSfzi9f3xEGJhCeMIZtVUpjPt2Lg1d9GVxiU";
+	$accesstokensecret = "b4656VO2DQGIaw8dPl1pvJhd3CiqpRM5DKZmgFYWww07T";
 
 	// $post_object = get_field('show_selector');
 	// if( $post_object ): 
@@ -21,7 +21,7 @@
 	// endif;
 
 	function getConnectionWithAccessToken($cons_key, $cons_secret, $oauth_token, $oauth_token_secret) {
-			$connection = new TwitterTOAuth($cons_key, $cons_secret, $oauth_token, $oauth_token_secret);
+			$connection = new TwitterOAuth($cons_key, $cons_secret, $oauth_token, $oauth_token_secret);
 		return $connection;
 	}
 

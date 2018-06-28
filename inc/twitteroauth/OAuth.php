@@ -3,11 +3,11 @@
 
 /* Generic exception class
  */
-class TOAuthException extends Exception {
+class OAuthException extends Exception {
   // pass
 }
 
-class TOAuthConsumer {
+class OAuthConsumer {
   public $key;
   public $secret;
 
@@ -18,11 +18,11 @@ class TOAuthConsumer {
   }
 
   function __toString() {
-    return "TOAuthConsumer[key=$this->key,secret=$this->secret]";
+    return "OAuthConsumer[key=$this->key,secret=$this->secret]";
   }
 }
 
-class TOAuthToken {
+class OAuthToken {
   // access tokens and request tokens
   public $key;
   public $secret;
@@ -41,10 +41,10 @@ class TOAuthToken {
    * would respond to request_token and access_token calls with
    */
   function to_string() {
-    return "TOAuth_token=" .
-           TOAuthUtil::urlencode_rfc3986($this->key) .
-           "&TOAuth_token_secret=" .
-           TOAuthUtil::urlencode_rfc3986($this->secret);
+    return "oauth_token=" .
+           OAuthUtil::urlencode_rfc3986($this->key) .
+           "&oauth_token_secret=" .
+           OAuthUtil::urlencode_rfc3986($this->secret);
   }
 
   function __toString() {
@@ -56,7 +56,7 @@ class TOAuthToken {
  * A class for implementing a Signature Method
  * See section 9 ("Signing Requests") in the spec
  */
-abstract class TOAuthSignatureMethod {
+abstract class OAuthSignatureMethod {
   /**
    * Needs to return the name of the Signature Method (ie HMAC-SHA1)
    * @return string
@@ -66,20 +66,20 @@ abstract class TOAuthSignatureMethod {
   /**
    * Build up the signature
    * NOTE: The output of this function MUST NOT be urlencoded.
-   * the encoding is handled in TOAuthRequest when the final
+   * the encoding is handled in OAuthRequest when the final
    * request is serialized
-   * @param TOAuthRequest $request
-   * @param TOAuthConsumer $consumer
-   * @param TOAuthToken $token
+   * @param OAuthRequest $request
+   * @param OAuthConsumer $consumer
+   * @param OAuthToken $token
    * @return string
    */
   abstract public function build_signature($request, $consumer, $token);
 
   /**
    * Verifies that a given signature is correct
-   * @param TOAuthRequest $request
-   * @param TOAuthConsumer $consumer
-   * @param TOAuthToken $token
+   * @param OAuthRequest $request
+   * @param OAuthConsumer $consumer
+   * @param OAuthToken $token
    * @param string $signature
    * @return bool
    */
@@ -96,7 +96,7 @@ abstract class TOAuthSignatureMethod {
  * character (ASCII code 38) even if empty.
  *   - Chapter 9.2 ("HMAC-SHA1")
  */
-class TOAuthSignatureMethod_HMAC_SHA1 extends TOAuthSignatureMethod {
+class OAuthSignatureMethod_HMAC_SHA1 extends OAuthSignatureMethod {
   function get_name() {
     return "HMAC-SHA1";
   }
@@ -110,7 +110,7 @@ class TOAuthSignatureMethod_HMAC_SHA1 extends TOAuthSignatureMethod {
       ($token) ? $token->secret : ""
     );
 
-    $key_parts = TOAuthUtil::urlencode_rfc3986($key_parts);
+    $key_parts = OAuthUtil::urlencode_rfc3986($key_parts);
     $key = implode('&', $key_parts);
 
     return base64_encode(hash_hmac('sha1', $base_string, $key, true));
@@ -122,19 +122,19 @@ class TOAuthSignatureMethod_HMAC_SHA1 extends TOAuthSignatureMethod {
  * over a secure channel such as HTTPS. It does not use the Signature Base String.
  *   - Chapter 9.4 ("PLAINTEXT")
  */
-class TOAuthSignatureMethod_PLAINTEXT extends TOAuthSignatureMethod {
+class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod {
   public function get_name() {
     return "PLAINTEXT";
   }
 
   /**
-   * TOAuth_signature is set to the concatenated encoded values of the Consumer Secret and 
+   * oauth_signature is set to the concatenated encoded values of the Consumer Secret and 
    * Token Secret, separated by a '&' character (ASCII code 38), even if either secret is 
    * empty. The result MUST be encoded again.
    *   - Chapter 9.4.1 ("Generating Signatures")
    *
    * Please note that the second encoding MUST NOT happen in the SignatureMethod, as
-   * TOAuthRequest handles this!
+   * OAuthRequest handles this!
    */
   public function build_signature($request, $consumer, $token) {
     $key_parts = array(
@@ -142,7 +142,7 @@ class TOAuthSignatureMethod_PLAINTEXT extends TOAuthSignatureMethod {
       ($token) ? $token->secret : ""
     );
 
-    $key_parts = TOAuthUtil::urlencode_rfc3986($key_parts);
+    $key_parts = OAuthUtil::urlencode_rfc3986($key_parts);
     $key = implode('&', $key_parts);
     $request->base_string = $key;
 
@@ -158,7 +158,7 @@ class TOAuthSignatureMethod_PLAINTEXT extends TOAuthSignatureMethod {
  * specification.
  *   - Chapter 9.3 ("RSA-SHA1")
  */
-abstract class TOAuthSignatureMethod_RSA_SHA1 extends TOAuthSignatureMethod {
+abstract class OAuthSignatureMethod_RSA_SHA1 extends OAuthSignatureMethod {
   public function get_name() {
     return "RSA-SHA1";
   }
@@ -217,7 +217,7 @@ abstract class TOAuthSignatureMethod_RSA_SHA1 extends TOAuthSignatureMethod {
   }
 }
 
-class TOAuthRequest {
+class OAuthRequest {
   private $parameters;
   private $http_method;
   private $http_url;
@@ -228,7 +228,7 @@ class TOAuthRequest {
 
   function __construct($http_method, $http_url, $parameters=NULL) {
     @$parameters or $parameters = array();
-    $parameters = array_merge( TOAuthUtil::parse_parameters(parse_url($http_url, PHP_URL_QUERY)), $parameters);
+    $parameters = array_merge( OAuthUtil::parse_parameters(parse_url($http_url, PHP_URL_QUERY)), $parameters);
     $this->parameters = $parameters;
     $this->http_method = $http_method;
     $this->http_url = $http_url;
@@ -255,10 +255,10 @@ class TOAuthRequest {
     // parsed parameter-list
     if (!$parameters) {
       // Find request headers
-      $request_headers = TOAuthUtil::get_headers();
+      $request_headers = OAuthUtil::get_headers();
 
       // Parse the query-string to find GET parameters
-      $parameters = TOAuthUtil::parse_parameters($_SERVER['QUERY_STRING']);
+      $parameters = OAuthUtil::parse_parameters($_SERVER['QUERY_STRING']);
 
       // It's a POST request of the proper content-type, so parse POST
       // parameters and add those overriding any duplicates from GET
@@ -266,16 +266,16 @@ class TOAuthRequest {
           && @strstr($request_headers["Content-Type"],
                      "application/x-www-form-urlencoded")
           ) {
-        $post_data = TOAuthUtil::parse_parameters(
+        $post_data = OAuthUtil::parse_parameters(
           file_get_contents(self::$POST_INPUT)
         );
         $parameters = array_merge($parameters, $post_data);
       }
 
-      // We have a Authorization-header with TOAuth data. Parse the header
+      // We have a Authorization-header with OAuth data. Parse the header
       // and add those overriding any duplicates from GET or POST
-      if (@substr($request_headers['Authorization'], 0, 6) == "TOAuth ") {
-        $header_parameters = TOAuthUtil::split_header(
+      if (@substr($request_headers['Authorization'], 0, 6) == "OAuth ") {
+        $header_parameters = OAuthUtil::split_header(
           $request_headers['Authorization']
         );
         $parameters = array_merge($parameters, $header_parameters);
@@ -283,7 +283,7 @@ class TOAuthRequest {
 
     }
 
-    return new TOAuthRequest($http_method, $http_url, $parameters);
+    return new OAuthRequest($http_method, $http_url, $parameters);
   }
 
   /**
@@ -291,16 +291,16 @@ class TOAuthRequest {
    */
   public static function from_consumer_and_token($consumer, $token, $http_method, $http_url, $parameters=NULL) {
     @$parameters or $parameters = array();
-    $defaults = array("TOAuth_version" => TOAuthRequest::$version,
-                      "TOAuth_nonce" => TOAuthRequest::generate_nonce(),
-                      "TOAuth_timestamp" => TOAuthRequest::generate_timestamp(),
-                      "TOAuth_consumer_key" => $consumer->key);
+    $defaults = array("oauth_version" => OAuthRequest::$version,
+                      "oauth_nonce" => OAuthRequest::generate_nonce(),
+                      "oauth_timestamp" => OAuthRequest::generate_timestamp(),
+                      "oauth_consumer_key" => $consumer->key);
     if ($token)
-      $defaults['TOAuth_token'] = $token->key;
+      $defaults['oauth_token'] = $token->key;
 
     $parameters = array_merge($defaults, $parameters);
 
-    return new TOAuthRequest($http_method, $http_url, $parameters);
+    return new OAuthRequest($http_method, $http_url, $parameters);
   }
 
   public function set_parameter($name, $value, $allow_duplicates = true) {
@@ -338,13 +338,13 @@ class TOAuthRequest {
     // Grab all parameters
     $params = $this->parameters;
 
-    // Remove TOAuth_signature if present
-    // Ref: Spec: 9.1.1 ("The TOAuth_signature parameter MUST be excluded.")
-    if (isset($params['TOAuth_signature'])) {
-      unset($params['TOAuth_signature']);
+    // Remove oauth_signature if present
+    // Ref: Spec: 9.1.1 ("The oauth_signature parameter MUST be excluded.")
+    if (isset($params['oauth_signature'])) {
+      unset($params['oauth_signature']);
     }
 
-    return TOAuthUtil::build_http_query($params);
+    return OAuthUtil::build_http_query($params);
   }
 
   /**
@@ -361,7 +361,7 @@ class TOAuthRequest {
       $this->get_signable_parameters()
     );
 
-    $parts = TOAuthUtil::urlencode_rfc3986($parts);
+    $parts = OAuthUtil::urlencode_rfc3986($parts);
 
     return implode('&', $parts);
   }
@@ -410,7 +410,7 @@ class TOAuthRequest {
    * builds the data one would send in a POST request
    */
   public function to_postdata() {
-    return TOAuthUtil::build_http_query($this->parameters);
+    return OAuthUtil::build_http_query($this->parameters);
   }
 
   /**
@@ -418,22 +418,22 @@ class TOAuthRequest {
    */
   public function to_header($realm=null) {
     $first = true;
-	if($realm) {
-      $out = 'Authorization: TOAuth realm="' . TOAuthUtil::urlencode_rfc3986($realm) . '"';
+  if($realm) {
+      $out = 'Authorization: OAuth realm="' . OAuthUtil::urlencode_rfc3986($realm) . '"';
       $first = false;
     } else
-      $out = 'Authorization: TOAuth';
+      $out = 'Authorization: OAuth';
 
     $total = array();
     foreach ($this->parameters as $k => $v) {
-      if (substr($k, 0, 5) != "TOAuth") continue;
+      if (substr($k, 0, 5) != "oauth") continue;
       if (is_array($v)) {
-        throw new TOAuthException('Arrays not supported in headers');
+        throw new OAuthException('Arrays not supported in headers');
       }
       $out .= ($first) ? ' ' : ',';
-      $out .= TOAuthUtil::urlencode_rfc3986($k) .
+      $out .= OAuthUtil::urlencode_rfc3986($k) .
               '="' .
-              TOAuthUtil::urlencode_rfc3986($v) .
+              OAuthUtil::urlencode_rfc3986($v) .
               '"';
       $first = false;
     }
@@ -447,12 +447,12 @@ class TOAuthRequest {
 
   public function sign_request($signature_method, $consumer, $token) {
     $this->set_parameter(
-      "TOAuth_signature_method",
+      "oauth_signature_method",
       $signature_method->get_name(),
       false
     );
     $signature = $this->build_signature($signature_method, $consumer, $token);
-    $this->set_parameter("TOAuth_signature", $signature, false);
+    $this->set_parameter("oauth_signature", $signature, false);
   }
 
   public function build_signature($signature_method, $consumer, $token) {
@@ -478,7 +478,7 @@ class TOAuthRequest {
   }
 }
 
-class TOAuthServer {
+class OAuthServer {
   protected $timestamp_threshold = 300; // in seconds, five minutes
   protected $version = '1.0';             // hi blaine
   protected $signature_methods = array();
@@ -511,7 +511,7 @@ class TOAuthServer {
     $this->check_signature($request, $consumer, $token);
 
     // Rev A change
-    $callback = $request->get_parameter('TOAuth_callback');
+    $callback = $request->get_parameter('oauth_callback');
     $new_token = $this->data_store->new_request_token($consumer, $callback);
 
     return $new_token;
@@ -532,7 +532,7 @@ class TOAuthServer {
     $this->check_signature($request, $consumer, $token);
 
     // Rev A change
-    $verifier = $request->get_parameter('TOAuth_verifier');
+    $verifier = $request->get_parameter('oauth_verifier');
     $new_token = $this->data_store->new_access_token($token, $consumer, $verifier);
 
     return $new_token;
@@ -554,14 +554,14 @@ class TOAuthServer {
    * version 1
    */
   private function get_version(&$request) {
-    $version = $request->get_parameter("TOAuth_version");
+    $version = $request->get_parameter("oauth_version");
     if (!$version) {
       // Service Providers MUST assume the protocol version to be 1.0 if this parameter is not present. 
       // Chapter 7.0 ("Accessing Protected Ressources")
       $version = '1.0';
     }
     if ($version !== $this->version) {
-      throw new TOAuthException("TOAuth version '$version' not supported");
+      throw new OAuthException("OAuth version '$version' not supported");
     }
     return $version;
   }
@@ -571,17 +571,17 @@ class TOAuthServer {
    */
   private function get_signature_method(&$request) {
     $signature_method =
-        @$request->get_parameter("TOAuth_signature_method");
+        @$request->get_parameter("oauth_signature_method");
 
     if (!$signature_method) {
       // According to chapter 7 ("Accessing Protected Ressources") the signature-method
       // parameter is required, and we can't just fallback to PLAINTEXT
-      throw new TOAuthException('No signature method parameter. This parameter is required');
+      throw new OAuthException('No signature method parameter. This parameter is required');
     }
 
     if (!in_array($signature_method,
                   array_keys($this->signature_methods))) {
-      throw new TOAuthException(
+      throw new OAuthException(
         "Signature method '$signature_method' not supported " .
         "try one of the following: " .
         implode(", ", array_keys($this->signature_methods))
@@ -594,14 +594,14 @@ class TOAuthServer {
    * try to find the consumer for the provided request's consumer key
    */
   private function get_consumer(&$request) {
-    $consumer_key = @$request->get_parameter("TOAuth_consumer_key");
+    $consumer_key = @$request->get_parameter("oauth_consumer_key");
     if (!$consumer_key) {
-      throw new TOAuthException("Invalid consumer key");
+      throw new OAuthException("Invalid consumer key");
     }
 
     $consumer = $this->data_store->lookup_consumer($consumer_key);
     if (!$consumer) {
-      throw new TOAuthException("Invalid consumer");
+      throw new OAuthException("Invalid consumer");
     }
 
     return $consumer;
@@ -611,12 +611,12 @@ class TOAuthServer {
    * try to find the token for the provided request's token key
    */
   private function get_token(&$request, $consumer, $token_type="access") {
-    $token_field = @$request->get_parameter('TOAuth_token');
+    $token_field = @$request->get_parameter('oauth_token');
     $token = $this->data_store->lookup_token(
       $consumer, $token_type, $token_field
     );
     if (!$token) {
-      throw new TOAuthException("Invalid $token_type token: $token_field");
+      throw new OAuthException("Invalid $token_type token: $token_field");
     }
     return $token;
   }
@@ -627,15 +627,15 @@ class TOAuthServer {
    */
   private function check_signature(&$request, $consumer, $token) {
     // this should probably be in a different method
-    $timestamp = @$request->get_parameter('TOAuth_timestamp');
-    $nonce = @$request->get_parameter('TOAuth_nonce');
+    $timestamp = @$request->get_parameter('oauth_timestamp');
+    $nonce = @$request->get_parameter('oauth_nonce');
 
     $this->check_timestamp($timestamp);
     $this->check_nonce($consumer, $token, $nonce, $timestamp);
 
     $signature_method = $this->get_signature_method($request);
 
-    $signature = $request->get_parameter('TOAuth_signature');
+    $signature = $request->get_parameter('oauth_signature');
     $valid_sig = $signature_method->check_signature(
       $request,
       $consumer,
@@ -644,7 +644,7 @@ class TOAuthServer {
     );
 
     if (!$valid_sig) {
-      throw new TOAuthException("Invalid signature");
+      throw new OAuthException("Invalid signature");
     }
   }
 
@@ -653,14 +653,14 @@ class TOAuthServer {
    */
   private function check_timestamp($timestamp) {
     if( ! $timestamp )
-      throw new TOAuthException(
+      throw new OAuthException(
         'Missing timestamp parameter. The parameter is required'
       );
     
     // verify that timestamp is recentish
     $now = time();
     if (abs($now - $timestamp) > $this->timestamp_threshold) {
-      throw new TOAuthException(
+      throw new OAuthException(
         "Expired timestamp, yours $timestamp, ours $now"
       );
     }
@@ -671,7 +671,7 @@ class TOAuthServer {
    */
   private function check_nonce($consumer, $token, $nonce, $timestamp) {
     if( ! $nonce )
-      throw new TOAuthException(
+      throw new OAuthException(
         'Missing nonce parameter. The parameter is required'
       );
 
@@ -683,13 +683,13 @@ class TOAuthServer {
       $timestamp
     );
     if ($found) {
-      throw new TOAuthException("Nonce already used: $nonce");
+      throw new OAuthException("Nonce already used: $nonce");
     }
   }
 
 }
 
-class TOAuthDataStore {
+class OAuthDataStore {
   function lookup_consumer($consumer_key) {
     // implement me
   }
@@ -715,10 +715,10 @@ class TOAuthDataStore {
 
 }
 
-class TOAuthUtil {
+class OAuthUtil {
   public static function urlencode_rfc3986($input) {
   if (is_array($input)) {
-    return array_map(array('TOAuthUtil', 'urlencode_rfc3986'), $input);
+    return array_map(array('OAuthUtil', 'urlencode_rfc3986'), $input);
   } else if (is_scalar($input)) {
     return str_replace(
       '+',
@@ -740,8 +740,8 @@ class TOAuthUtil {
 
   // Utility function for turning the Authorization: header into
   // parameters, has to do some unescaping
-  // Can filter out any non-TOAuth parameters if needed (default behaviour)
-  public static function split_header($header, $only_allow_TOAuth_parameters = true) {
+  // Can filter out any non-oauth parameters if needed (default behaviour)
+  public static function split_header($header, $only_allow_oauth_parameters = true) {
     $pattern = '/(([-_a-z]*)=("([^"]*)"|([^,]*)),?)/';
     $offset = 0;
     $params = array();
@@ -749,8 +749,8 @@ class TOAuthUtil {
       $match = $matches[0];
       $header_name = $matches[2][0];
       $header_content = (isset($matches[5])) ? $matches[5][0] : $matches[4][0];
-      if (preg_match('/^TOAuth_/', $header_name) || !$only_allow_TOAuth_parameters) {
-        $params[$header_name] = TOAuthUtil::urldecode_rfc3986($header_content);
+      if (preg_match('/^oauth_/', $header_name) || !$only_allow_oauth_parameters) {
+        $params[$header_name] = OAuthUtil::urldecode_rfc3986($header_content);
       }
       $offset = $match[1] + strlen($match[0]);
     }
@@ -819,8 +819,8 @@ class TOAuthUtil {
     $parsed_parameters = array();
     foreach ($pairs as $pair) {
       $split = explode('=', $pair, 2);
-      $parameter = TOAuthUtil::urldecode_rfc3986($split[0]);
-      $value = isset($split[1]) ? TOAuthUtil::urldecode_rfc3986($split[1]) : '';
+      $parameter = OAuthUtil::urldecode_rfc3986($split[0]);
+      $value = isset($split[1]) ? OAuthUtil::urldecode_rfc3986($split[1]) : '';
 
       if (isset($parsed_parameters[$parameter])) {
         // We have already recieved parameter(s) with this name, so add to the list
@@ -844,8 +844,8 @@ class TOAuthUtil {
     if (!$params) return '';
 
     // Urlencode both keys and values
-    $keys = TOAuthUtil::urlencode_rfc3986(array_keys($params));
-    $values = TOAuthUtil::urlencode_rfc3986(array_values($params));
+    $keys = OAuthUtil::urlencode_rfc3986(array_keys($params));
+    $values = OAuthUtil::urlencode_rfc3986(array_values($params));
     $params = array_combine($keys, $values);
 
     // Parameters are sorted by name, using lexicographical byte value ordering.
@@ -871,4 +871,3 @@ class TOAuthUtil {
   }
 }
 
-?>

@@ -17,12 +17,12 @@ class TwitterAPIExchange
     /**
      * @var string
      */
-    private $TOAuth_access_token;
+    private $oauth_access_token;
 
     /**
      * @var string
      */
-    private $TOAuth_access_token_secret;
+    private $oauth_access_token_secret;
 
     /**
      * @var string
@@ -47,7 +47,7 @@ class TwitterAPIExchange
     /**
      * @var mixed
      */
-    protected $TOAuth;
+    protected $oauth;
 
     /**
      * @var string
@@ -61,7 +61,7 @@ class TwitterAPIExchange
 
     /**
      * Create the API access object. Requires an array of settings::
-     * TOAuth access token, TOAuth access token secret, consumer key, consumer secret
+     * oauth access token, oauth access token secret, consumer key, consumer secret
      * These are all available by creating your own application on dev.twitter.com
      * Requires the cURL library
      *
@@ -76,16 +76,16 @@ class TwitterAPIExchange
             throw new Exception('You need to install cURL, see: http://curl.haxx.se/docs/install.html');
         }
         
-        if (!isset($settings['TOAuth_access_token'])
-            || !isset($settings['TOAuth_access_token_secret'])
+        if (!isset($settings['oauth_access_token'])
+            || !isset($settings['oauth_access_token_secret'])
             || !isset($settings['consumer_key'])
             || !isset($settings['consumer_secret']))
         {
             throw new Exception('Make sure you are passing in the correct parameters');
         }
 
-        $this->TOAuth_access_token = $settings['TOAuth_access_token'];
-        $this->TOAuth_access_token_secret = $settings['TOAuth_access_token_secret'];
+        $this->oauth_access_token = $settings['oauth_access_token'];
+        $this->oauth_access_token_secret = $settings['oauth_access_token_secret'];
         $this->consumer_key = $settings['consumer_key'];
         $this->consumer_secret = $settings['consumer_secret'];
     }
@@ -121,9 +121,9 @@ class TwitterAPIExchange
         
         $this->postfields = $array;
         
-        // rebuild TOAuth
-        if (isset($this->TOAuth['TOAuth_signature'])) {
-            $this->buildTOAuth($this->url, $this->requestMethod);
+        // rebuild oAuth
+        if (isset($this->oauth['oauth_signature'])) {
+            $this->buildOauth($this->url, $this->requestMethod);
         }
 
         return $this;
@@ -183,7 +183,7 @@ class TwitterAPIExchange
     }
     
     /**
-     * Build the TOAuth object using params set in construct and additionals
+     * Build the Oauth object using params set in construct and additionals
      * passed to this method. For v1.1, see: https://dev.twitter.com/docs/api/1.1
      *
      * @param string $url           The API url to use. Example: https://api.twitter.com/1.1/search/tweets.json
@@ -193,7 +193,7 @@ class TwitterAPIExchange
      *
      * @return \TwitterAPIExchange Instance of self for method chaining
      */
-    public function buildTOAuth($url, $requestMethod)
+    public function buildOauth($url, $requestMethod)
     {
         if (!in_array(strtolower($requestMethod), array('post', 'get')))
         {
@@ -202,16 +202,16 @@ class TwitterAPIExchange
         
         $consumer_key              = $this->consumer_key;
         $consumer_secret           = $this->consumer_secret;
-        $TOAuth_access_token        = $this->TOAuth_access_token;
-        $TOAuth_access_token_secret = $this->TOAuth_access_token_secret;
+        $oauth_access_token        = $this->oauth_access_token;
+        $oauth_access_token_secret = $this->oauth_access_token_secret;
         
-        $TOAuth = array(
-            'TOAuth_consumer_key' => $consumer_key,
-            'TOAuth_nonce' => time(),
-            'TOAuth_signature_method' => 'HMAC-SHA1',
-            'TOAuth_token' => $TOAuth_access_token,
-            'TOAuth_timestamp' => time(),
-            'TOAuth_version' => '1.0'
+        $oauth = array(
+            'oauth_consumer_key' => $consumer_key,
+            'oauth_nonce' => time(),
+            'oauth_signature_method' => 'HMAC-SHA1',
+            'oauth_token' => $oauth_access_token,
+            'oauth_timestamp' => time(),
+            'oauth_version' => '1.0'
         );
         
         $getfield = $this->getGetfield();
@@ -227,7 +227,7 @@ class TwitterAPIExchange
                 /** In case a null is passed through **/
                 if (isset($split[1]))
                 {
-                    $TOAuth[$split[0]] = urldecode($split[1]);
+                    $oauth[$split[0]] = urldecode($split[1]);
                 }
             }
         }
@@ -236,18 +236,18 @@ class TwitterAPIExchange
 
         if (!is_null($postfields)) {
             foreach ($postfields as $key => $value) {
-                $TOAuth[$key] = $value;
+                $oauth[$key] = $value;
             }
         }
 
-        $base_info = $this->buildBaseString($url, $requestMethod, $TOAuth);
-        $composite_key = rawurlencode($consumer_secret) . '&' . rawurlencode($TOAuth_access_token_secret);
-        $TOAuth_signature = base64_encode(hash_hmac('sha1', $base_info, $composite_key, true));
-        $TOAuth['TOAuth_signature'] = $TOAuth_signature;
+        $base_info = $this->buildBaseString($url, $requestMethod, $oauth);
+        $composite_key = rawurlencode($consumer_secret) . '&' . rawurlencode($oauth_access_token_secret);
+        $oauth_signature = base64_encode(hash_hmac('sha1', $base_info, $composite_key, true));
+        $oauth['oauth_signature'] = $oauth_signature;
         
         $this->url = $url;
         $this->requestMethod = $requestMethod;
-        $this->TOAuth = $TOAuth;
+        $this->oauth = $oauth;
         
         return $this;
     }
@@ -269,7 +269,7 @@ class TwitterAPIExchange
             throw new Exception('performRequest parameter must be true or false');
         }
 
-        $header =  array($this->buildAuthorizationHeader($this->TOAuth), 'Expect:');
+        $header =  array($this->buildAuthorizationHeader($this->oauth), 'Expect:');
 
         $getfield = $this->getGetfield();
         $postfields = $this->getPostfields();
@@ -335,19 +335,19 @@ class TwitterAPIExchange
     /**
      * Private method to generate authorization header used by cURL
      * 
-     * @param array $TOAuth Array of TOAuth data generated by buildTOAuth()
+     * @param array $oauth Array of oauth data generated by buildOauth()
      * 
      * @return string $return Header used by cURL for request
      */    
-    private function buildAuthorizationHeader(array $TOAuth)
+    private function buildAuthorizationHeader(array $oauth)
     {
-        $return = 'Authorization: TOAuth ';
+        $return = 'Authorization: OAuth ';
         $values = array();
         
-        foreach($TOAuth as $key => $value)
+        foreach($oauth as $key => $value)
         {
-            if (in_array($key, array('TOAuth_consumer_key', 'TOAuth_nonce', 'TOAuth_signature',
-                'TOAuth_signature_method', 'TOAuth_timestamp', 'TOAuth_token', 'TOAuth_version'))) {
+            if (in_array($key, array('oauth_consumer_key', 'oauth_nonce', 'oauth_signature',
+                'oauth_signature_method', 'oauth_timestamp', 'oauth_token', 'oauth_version'))) {
                 $values[] = "$key=\"" . rawurlencode($value) . "\"";
             }
         }
@@ -379,6 +379,6 @@ class TwitterAPIExchange
             $this->setPostfields($data);
         }
 
-        return $this->buildTOAuth($url, $method)->performRequest(true, $curlOptions);
+        return $this->buildOauth($url, $method)->performRequest(true, $curlOptions);
     }
 }
