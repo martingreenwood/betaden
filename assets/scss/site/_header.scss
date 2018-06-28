@@ -51,7 +51,7 @@
 
 
 #masthead {
-	padding: 5rem 0;
+	padding: 4rem 0;
 	
 	-webkit-transition: all .2s linear;
 	-moz-transition: all .2s linear;
@@ -72,6 +72,10 @@
 	&.shorty {
 		background-color: white;
 		padding: 4rem 0;
+
+		@media (#{$bp-larger-than-tablet}) {
+			padding: 4rem 0;
+		}
 
 		svg {
 			g, path {
@@ -98,8 +102,11 @@
 	// transition: top .5s linear 0s, background 0.5s linear 0s;
 
 	.row {
-		padding: 0 4rem;
 		box-sizing: border-box;
+
+		@media (#{$bp-larger-than-tablet}) {
+			padding: 0 4rem;
+		}
 	}
 
 	.site-branding {
