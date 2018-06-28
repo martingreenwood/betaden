@@ -1400,8 +1400,18 @@ img {
 				vertical-align: top;
 			}
 
-			img {
-				display: block;
+			element {
+				display: inline-block;
+				width: 95px;
+				height: 105px;
+				background-size: cover;
+				-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				line-height: 105px;
+				margin: 0 10px;
+
+				background-size: cover;
+				background-position: center;
 			}
 
 			h3 {
