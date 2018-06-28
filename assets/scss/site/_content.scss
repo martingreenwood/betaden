@@ -120,11 +120,12 @@ img {
 	background-repeat: no-repeat;
 	background-image: url(assets/img/mobile-bg.png);
 
-	margin-top: 860px;
-	// margin-top: 980px;
+	margin-top: 127vh;
 	z-index: 3;
 
 	@media (#{$bp-larger-than-tablet}) {
+		margin-top: 860px;
+
 		background-size: 100% auto;
 		background-position: top center;
 		background-repeat: no-repeat;
@@ -167,13 +168,9 @@ img {
 	.hex {
 		position: absolute;
 		
-		// top: -820px;
-		// right: 40px;
-		// width: 750px;
-
-		top: -700px;
+		top: -280px;
 		right: 0;
-		width: 650px;
+		width: 75%;
 
 		@media (#{$bp-larger-than-tablet}) {
 			top: -700px;
@@ -245,7 +242,11 @@ img {
 		position: relative;
 		display: inline-block;
 		vertical-align: middle;
-		width: 50%;
+		width: 100%;
+
+		@media (#{$bp-larger-than-tablet}) {
+			width: 50%;
+		}
 		
 		// z-index: 3;
 		
@@ -728,7 +729,10 @@ img {
 
 	.row {
 		box-sizing: border-box;
-		padding: 0 4rem;
+
+		@media (#{$bp-larger-than-tablet}) {
+			padding: 0 4rem;
+		}
 	}
 
 	.gform_wrapper {
