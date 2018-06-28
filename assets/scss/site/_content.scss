@@ -298,18 +298,18 @@ img {
 
 #intro {
 	position: relative;
-	padding: 100px 0 100px 0;
+	padding: 12rem 0;
 	z-index: 1;
 	text-align: center;
+
+	article {
+		text-align: center;
+		margin: 0 auto;
+	}
 
 	.content {
 		position: relative;
 		height: 100%;
-
-		article {
-			text-align: center;
-			margin: 0 auto;
-		}
 
 		h1 {
 			color: black;
@@ -693,7 +693,7 @@ img {
 
 		article {
 			// float: left;
-			text-align: left;
+			// text-align: left;
 		}
 	}
 }
@@ -721,9 +721,9 @@ img {
 	#intro {
 
 		article {
-			text-align: center;
-			float: none;
-			margin: 0 auto;
+			// text-align: center;
+			// float: none;
+			// margin: 0 auto;
 		}
 	}
 
@@ -1216,9 +1216,9 @@ img {
 		padding: 12rem 0;
 		
 		article {
-			margin: 0 auto;
-			width: 100%;
-			text-align: center;
+			// margin: 0 auto;
+			// width: 100%;
+			// text-align: center;
 		}
 	}
 
