@@ -26,10 +26,8 @@
 	<div class="alert">
 		<div class="box">
 			<div class="content">
-				<h3>Lorem Ipsum</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+				<h3>Registration Open</h3>
+				<p>The first cohort is launching this September. Register you interest TODAY.</p>
 				<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a>
 				<a href="#" class="close" title="Close">Close</a>
 			</div>
