@@ -134,12 +134,18 @@ img {
 	.tri2 {
 		background: transparent;
 		position: absolute;
-		top: -374px;
+		top: -163px;
 		width: 0;
 		height: 0;
 		right: 0;
-		border-bottom: 378px solid white;
-		border-left: 651px solid transparent;
+		border-bottom: 198px solid white;
+		border-left: 100vw solid transparent;
+
+		@media (#{$bp-larger-than-tablet}) {
+			top: -374px;
+			border-bottom: 378px solid white;
+			border-left: 651px solid transparent;
+		}
 	}
 
 	.tri {
@@ -148,8 +154,14 @@ img {
 		top: -315px;
 		width: 0;
 		height: 0;
-		border-bottom: 322px solid white;
-		border-right: 80vw solid transparent;
+		border-bottom: 120px solid white;
+		border-right: 70vw solid transparent;
+
+		@media (#{$bp-larger-than-tablet}) {
+			top: -94px;
+			border-bottom: 322px solid white;
+			border-right: 80vw solid transparent;
+		}
 	}
 
 	.hex {
@@ -188,6 +200,7 @@ img {
 
 	.row {
 		box-sizing: border-box;
+		
 		@media (#{$bp-larger-than-tablet}) {
 			padding: 0 4rem;
 		}
@@ -261,7 +274,7 @@ img {
 		padding: 0 0 10rem 0;
 
 		h1 {		
-			font-size: 3rem;	
+			font-size: 2.4rem;
 
 			@media (#{$bp-larger-than-tablet}) {
 				font-size: 4rem;
@@ -752,7 +765,11 @@ img {
 .home {
 
 	#banner {
-		height: 980px;
+		height: 100vh;
+
+		@media (#{$bp-larger-than-tablet}) {
+			height: 980px;
+		}
 	}
 
 	#intro {
@@ -773,7 +790,11 @@ img {
 	}
 
 	#content {
-		margin-top: 980px;
+		margin-top: 100vh;
+
+		@media (#{$bp-larger-than-tablet}) {
+			margin-top: 980px;
+		}
 	}
 }
 
