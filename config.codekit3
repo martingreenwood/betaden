@@ -3156,6 +3156,13 @@
 		"oAP": "\/template-parts\/content-single.php",
 		"oF": 0
 		},
+	"\/template-parts\/content-story.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/template-parts\/content-story.php",
+		"oF": 0
+		},
 	"\/template-parts\/content.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -3203,6 +3210,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/mentors.php",
+		"oF": 0
+		},
+	"\/templates\/story.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/story.php",
 		"oF": 0
 		}
 	},
