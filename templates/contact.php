@@ -42,7 +42,7 @@ get_header();
 						<div class="row">
 							<div class="person">
 								<div class="pic">
-									<img src="<?php the_field( 'bio_one_image' ); ?>" alt="">
+									<element style="background-image: url(<?php the_field( 'bio_one_image' ); ?>");></element>
 								</div><!--
 								--><div class="bio">
 									<h3><?php the_field( 'bio_one_name' ); ?></h3>
@@ -52,7 +52,7 @@ get_header();
 							</div><!--
 							--><div class="person">
 								<div class="pic">
-									<img src="<?php the_field( 'bio_two_image' ); ?>" alt="">
+									<element style="background-image: url(<?php the_field( 'bio_two_image' ); ?>);"></element>
 								</div><!--
 								--><div class="bio">
 									<h3><?php the_field( 'bio_two_name' ); ?></h3>
