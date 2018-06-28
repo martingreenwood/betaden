@@ -137,7 +137,8 @@
 		border-radius: 0;
 		height: inherit;
 		position: absolute;
-		bottom: 8px;
+		bottom: 15px;
+		right: 0;
 		z-index: 99;
 
 		@media (#{$bp-larger-than-tablet}) {
