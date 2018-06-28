@@ -99,7 +99,7 @@ img {
 	background-repeat: no-repeat;
 	background-image: url(assets/img/mobile-bg.png);
 
-	margin-top: 760px;
+	margin-top: 860px;
 	// margin-top: 980px;
 	z-index: 3;
 
@@ -133,9 +133,13 @@ img {
 
 	.hex {
 		position: absolute;
-		top: -820px;
+		// top: -820px;
+		// right: 40px;
+		// width: 750px;
+
+		top: -720px;
 		right: 40px;
-		width: 750px;
+		width: 650px;
 	}
 }
 
@@ -1208,7 +1212,13 @@ img {
 .contact {
 
 	#intro {
-		padding: 0;
+		padding: 12rem 0;
+		
+		article {
+			margin: 0 auto;
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 	.gform_wrapper {
@@ -1219,10 +1229,7 @@ img {
 	}
 
 	#primary {
-		background-image: url(assets/img/square-orange.png);
-		background-position: 0 center;
-		background-size: auto 100%;
-		background-repeat: no-repeat;
+		background: transparent;
 		padding: 120px 0;
 	}
 }
@@ -1330,6 +1337,81 @@ img {
 					padding-right: 0;
 					padding-left: 4rem;
 				}
+			}
+		}
+	}
+}
+
+#social {
+	margin: 12rem 0 0 0;
+
+	ul {
+		margin: 0;
+		list-style: none;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			width: 95px;
+			height: 105px;
+			background-size: cover;
+			-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+			clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+			background: $primary-color;
+			line-height: 105px;
+			margin: 0 10px;
+
+			a {
+				font-size: 30px;
+				color: white;
+			}
+		}
+	}
+}
+
+#bios {
+	// margin-top: 12rem;
+
+	.content {
+
+		.person {
+			width: 100%;
+			display: inline-block;
+			vertical-align: top;
+			box-sizing: border-box;
+			text-align: center;
+
+			@media (#{$bp-larger-than-tablet}) {
+				width: 50%;
+				padding: 0 2rem;
+			}
+
+			.pic {
+				width: 30%;
+				margin-bottom: 1rem;
+			}
+
+			.bio {
+				width: 100%;
+			}
+
+			.pic, .bio {
+				display: inline-block;
+				vertical-align: top;
+			}
+
+			img {
+				display: block;
+			}
+
+			h3 {
+				color: black;
+				font-size: 3rem;
+				margin: 0;
+			}
+
+			h4 {
+				font-size: 2rem;
 			}
 		}
 	}
