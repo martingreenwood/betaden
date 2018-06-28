@@ -14,7 +14,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100vw;
+		width: 100%;
 		background: rgba($primary-color, 0.9);
 		z-index: 10;
 
@@ -30,7 +30,11 @@
 			text-align: center;
 
 			.logo {
-				margin-bottom: 8rem;
+				margin-bottom: 4rem;
+
+				@media (#{$bp-larger-than-tablet}) {
+					margin-bottom: 8rem;
+				}
 
 				svg {
 					path: white;
@@ -81,7 +85,7 @@
 						background: white;
 						display: block;
 						padding: 2rem;
-						margin-top: 6rem;
+						margin-top: 4rem;
 						border-radius: 4px;
 						font-size: 3rem;
 						line-height: normal;
@@ -89,6 +93,10 @@
 						text-decoration: none;
 						font-family: $nav-font-family;
 						text-transform: uppercase;
+
+						@media (#{$bp-larger-than-tablet}) {
+							margin-top: 6rem;
+						}
 					}
 				}
 
@@ -118,6 +126,10 @@
 		bottom: 30px;
 		z-index: 99;
 
+		@media (#{$bp-larger-than-tablet}) {
+			right: 15px;
+		}
+
 		.hamburger-box {
 			display: block;
 		}
@@ -132,16 +144,24 @@
 	&.toggled {
 
 		.hamburger {
-			bottom: 36px;
+			//bottom: 36px;
 
 			.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
 				background-color: white;
 			}
 		}
 
+		.logo {
+
+			svg {
+				path: white;
+			}
+		}
+
 		.menu-wrap {
 			visibility: visible;
 			height: 100%;
+			opacity: 1;
 		}
 
 		#primary-menu {
