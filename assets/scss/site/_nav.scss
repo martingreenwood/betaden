@@ -25,19 +25,31 @@
 		overflow: hidden;
 
 		.table {
-			width: 320px;
+			max-width: 320px;
+			width: 90%;
 			margin: 0 auto;
 			text-align: center;
 
+			@media (#{$bp-larger-than-tablet}) {
+			}
+
 			.logo {
-				margin-bottom: 4rem;
+				margin-bottom: 3rem;
 
 				@media (#{$bp-larger-than-tablet}) {
 					margin-bottom: 8rem;
 				}
 
 				svg {
-					path: white;
+					width: 165px;
+
+					@media (#{$bp-larger-than-tablet}) {
+						width: 300px;
+					}
+
+					path {
+						fill: white;
+					}
 				}
 			}
 		}
@@ -55,11 +67,11 @@
 				opacity: 0;
 				position: relative;
 				-webkit-transition: all .4s linear;
-				   -moz-transition: all .4s linear;
-				    -ms-transition: all .4s linear;
-				     -o-transition: all .4s linear;
-				        transition: all .4s linear;
-				        transition-delay: 0s;
+				-moz-transition: all .4s linear;
+				-ms-transition: all .4s linear;
+				-o-transition: all .4s linear;
+				transition: all .4s linear;
+				transition-delay: 0s;
 
 				&.current_page_item {
 					background: white;
@@ -73,10 +85,13 @@
 				a {
 					text-decoration: none;
 					color: white;
-					font-size: 2.3rem;
 					font-family: $nav-font-family;
-					padding: 10px 15px;
 					text-transform: uppercase;
+
+					@media (#{$bp-larger-than-tablet}) {
+						padding: 10px 15px;
+						font-size: 2.3rem;
+					}
 				}
 
 				&.apply {
@@ -85,9 +100,8 @@
 						background: white;
 						display: block;
 						padding: 2rem;
-						margin-top: 4rem;
+						margin-top: 2rem;
 						border-radius: 4px;
-						font-size: 3rem;
 						line-height: normal;
 						color: $primary-color;
 						text-decoration: none;
@@ -96,6 +110,7 @@
 
 						@media (#{$bp-larger-than-tablet}) {
 							margin-top: 6rem;
+							font-size: 3rem;
 						}
 					}
 				}
@@ -122,12 +137,12 @@
 		border-radius: 0;
 		height: inherit;
 		position: absolute;
-		right: 4rem;
-		bottom: 30px;
+		bottom: 8px;
 		z-index: 99;
 
 		@media (#{$bp-larger-than-tablet}) {
-			right: 15px;
+			bottom: 30px;
+			right: 4rem;
 		}
 
 		.hamburger-box {
