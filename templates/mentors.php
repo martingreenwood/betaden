@@ -38,8 +38,7 @@ get_header();
 		<div class="content">
 			<div class="table">
 				<div class="cell middle">
-					<div>
-					<!-- <div class="container"> -->
+					<div class="container">
 						<div class="row"><!--
 							<?php
 							$args = array(
