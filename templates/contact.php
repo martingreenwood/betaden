@@ -77,7 +77,6 @@ get_header();
 					<div class="container">
 						<div class="row">
 							<ul>
-								<li><a href="<?php the_field( 'facebook' ); ?>" target="_blank" title=""><i class="fab fa-facebook-f"></i></a></li>
 								<li><a href="<?php the_field( 'twitter' ); ?>" target="_blank" title=""><i class="fab fa-twitter"></i></a></li>
 								<li><a href="<?php the_field( 'linkedin' ); ?>" target="_blank" title=""><i class="fab fa-linkedin-in"></i></a></li>
 								<li><a href="<?php the_field( 'instagram' ); ?>" target="_blank" title=""><i class="fab fa-instagram"></i></a></li>
