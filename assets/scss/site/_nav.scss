@@ -31,6 +31,10 @@
 
 			.logo {
 				margin-bottom: 8rem;
+
+				svg {
+					path: white;
+				}
 			}
 		}
 
@@ -136,7 +140,6 @@
 		}
 
 		.menu-wrap {
-			opacity: .9;
 			visibility: visible;
 			height: 100%;
 		}
