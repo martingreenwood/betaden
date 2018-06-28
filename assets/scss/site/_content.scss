@@ -68,11 +68,11 @@ body {
 				text-transform: uppercase;
 				text-decoration: none;
 				margin-top: 2rem;
-				width: 40%;
+				width: 100%;
 				text-align: center;
 
 				@media (#{$bp-larger-than-tablet}) {
-					width: 100%;
+					width: 40%;
 				}
 			}
 		}
