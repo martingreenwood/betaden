@@ -26,8 +26,8 @@
 	<div class="alert">
 		<div class="box">
 			<div class="content">
-				<h3>Registration Open</h3>
-				<p>The first cohort is launching this September. Register you interest TODAY.</p>
+				<h3>BetaDen UK has now officially launched!</h3>
+				<p>Applications are open and we can’t wait to hear from you, the deadline for applications is the 31st of July ready to launch our first ever cohort this autumn.</p>
 				<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a>
 				<a href="#" class="close" title="Close">Close</a>
 			</div>
