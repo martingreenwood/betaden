@@ -134,7 +134,7 @@ img {
 	.tri2 {
 		background: transparent;
 		position: absolute;
-		top: -163px;
+		top: -198px;
 		width: 0;
 		height: 0;
 		right: 0;
@@ -142,7 +142,7 @@ img {
 		border-left: 100vw solid transparent;
 
 		@media (#{$bp-larger-than-tablet}) {
-			top: -374px;
+			top: -378px;
 			border-bottom: 378px solid white;
 			border-left: 651px solid transparent;
 		}
@@ -151,14 +151,14 @@ img {
 	.tri {
 		background: transparent;
 		position: absolute;
-		top: -315px;
+		top: -75px;
 		width: 0;
 		height: 0;
 		border-bottom: 120px solid white;
 		border-right: 70vw solid transparent;
 
 		@media (#{$bp-larger-than-tablet}) {
-			top: -94px;
+			top: -315px;
 			border-bottom: 322px solid white;
 			border-right: 80vw solid transparent;
 		}
