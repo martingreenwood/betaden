@@ -13,7 +13,7 @@
 	
 	<div class="entry-header columns four">&nbsp;
 		<?php $img = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
-		<element style="background-image: url(<?php echo $img; ?>)"></element>
+		<div class="element" style="background-image: url(<?php echo $img; ?>)"></div>
 		<?php if (get_field( 'twitter' ) || get_field( 'linkedin' ) || get_field( 'instagram' )): ?>
 		<ul>
 			<?php if (get_field( 'twitter' )): ?>

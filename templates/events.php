@@ -108,8 +108,8 @@ get_header(); ?>
 								</div><!--
 								--><div class="thumb">
 									<?php $blogImg = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
-									<element style="background-image: url(<?php echo $blogImg; ?>);">
-									</element>
+									<div class="element" style="background-image: url(<?php echo $blogImg; ?>);">
+									</div>
 								</div>
 
 							</article>

@@ -39,7 +39,7 @@ get_header(); ?>
 								<?php if ($prevPost): ?>
 								<a href="<?php echo get_the_permalink( $prevPost->ID ); ?>" title="">
 									<?php $prevImg = get_the_post_thumbnail_url( $prevPost->ID, 'full' ); ?>
-									<element style="background-image: url(<?php echo $prevImg; ?>)"></element>
+									<div class="element" style="background-image: url(<?php echo $prevImg; ?>)"></div>
 									<div class="info">
 										<h3><?php echo $prevPost->post_title; ?></h3>
 										<h4><?php the_field( 'company_name', $prevPost->ID ); ?></h4>
@@ -52,7 +52,7 @@ get_header(); ?>
 								<?php if ($nextPost): ?>
 								<a href="<?php echo get_the_permalink( $nextPost->ID ); ?>" title="">
 									<?php $nextImg = get_the_post_thumbnail_url( $nextPost->ID, 'full' ); ?>
-									<element style="background-image: url(<?php echo $nextImg; ?>)"></element>
+									<div class="element" style="background-image: url(<?php echo $nextImg; ?>)"></div>
 									<div class="info">
 										<h3><?php echo $nextPost->post_title; ?></h3>
 										<h4><?php the_field( 'company_name', $nextPost->ID ); ?></h4>

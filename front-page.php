@@ -33,41 +33,41 @@ get_header(); ?>
 							<ul class="quicklinks">
 								<li>
 									<a href="<?php echo home_url( 'our-story' ); ?>" title="">
-										<element>
+										<div class="element">
 											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/story-hex.png" alt="">
-										</element>
+										</div>
 										<span>Our Story</span>
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo home_url( 'events' ); ?>" title="">
-										<element>
+										<div class="element">
 											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/events-hex.png" alt="">
-										</element>
+										</div>
 										<span>Events</span>
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo home_url( 'mentors' ); ?>" title="">
-										<element>
+										<div class="element">
 											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/mentoring-hex.png" alt="">
-										</element>
+										</div>
 										<span>Mentoring</span>
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo home_url( 'location' ); ?>" title="">
-										<element>
+										<div class="element">
 											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/location-hex.png" alt="">
-										</element>
+										</div>
 										<span>Location</span>
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo home_url( 'apply' ); ?>" title="">
-										<element>
+										<div class="element">
 											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Hexagon1.png" alt="">
-										</element>
+										</div>
 										<span>Apply</span>
 									</a>
 								</li>
@@ -166,7 +166,7 @@ get_header(); ?>
 						--><div class="thumb">
 							<?php $blogImg = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
 							<element style="background-image: url(<?php echo $blogImg; ?>);">
-							</element>
+							</div>
 						</div>
 
 					</div>
