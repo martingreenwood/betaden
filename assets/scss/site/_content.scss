@@ -567,8 +567,12 @@ img {
 		padding: 3rem 0;
 
 		.fa-twitter {
-			font-size: 76px;
+			font-size: 46px;
 			color: black;
+
+			@media (#{$bp-larger-than-desktop}) {
+				font-size: 76px;
+			}
 		}
 	}
 
