@@ -56,12 +56,12 @@ input.tml-button {
 			background-size: 100% auto;
 			background-repeat: no-repeat;
 			border-radius: 4px;
-			padding: 24rem 2rem 2rem 2rem;
+			padding: 14rem 2rem 2rem 2rem;
 			box-sizing: border-box;
 
 			@media (#{$bp-larger-than-tablet}) {
 				width: 100%;
-				padding: 40rem 4rem 4rem 4rem;
+				padding: 24rem 4rem 4rem 4rem;
 			}
 
 			h3 {
