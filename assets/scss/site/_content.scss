@@ -280,6 +280,10 @@ img {
 			}
 
 			@media (#{$bp-larger-than-desktop}) {
+				font-size: 4.5rem;
+			}
+
+			@media (#{$bp-larger-than-desktophd}) {
 				font-size: 5.5rem;
 			}
 			
