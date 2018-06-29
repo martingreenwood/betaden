@@ -345,6 +345,10 @@ img {
 		text-align: center;
 		margin: 0 auto;
 		float: none;
+
+		@media (#{$bp-smaller-than-tablet}) {
+			width: 100%;
+		}
 	}
 
 	.content {
