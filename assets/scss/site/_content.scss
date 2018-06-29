@@ -51,9 +51,8 @@ body {
 			background-size: 100% auto;
 			background-repeat: no-repeat;
 			border-radius: 4px;
-			padding: 2rem;
+			padding: 24rem 2rem 2rem 2rem;
 			box-sizing: border-box;
-			padding-top: 24rem;
 
 			@media (#{$bp-larger-than-tablet}) {
 				padding-top: 40rem;
