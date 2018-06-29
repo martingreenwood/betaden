@@ -73,7 +73,7 @@
 		var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
 
 		var icon = {
-			url: 'http://local.beta-den.com/wp-content/themes/betaden/assets/img/marker.png', // url
+			url: 'http://staging.beta-den.com/wp-content/themes/betaden/assets/img/marker.png', // url
 			scaledSize: new google.maps.Size(50, 50), // scaled size
 			origin: new google.maps.Point(0,0), // origin
 			anchor: new google.maps.Point(25, 50) // anchor
