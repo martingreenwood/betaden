@@ -482,7 +482,7 @@ img {
 			-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 			clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 
-			@media (#{$bp-larger-than-tablet}) {
+			@media (#{$bp-larger-than-desktop}) {
 				width: 285px;
 				height: 295px;
 				display: inline-block;
@@ -500,9 +500,14 @@ img {
 		}
 
 		.entry-content {
-			width: 70%;
+			width: 100%;
 			padding-right: 4rem;
-			text-align: left;
+			text-align: center;
+
+			@media (#{$bp-larger-than-desktop}) {
+				width: 70%;
+				text-align: left;
+			}
 
 			h1 {
 				color: black;
@@ -535,6 +540,11 @@ img {
 		.thumb {
 			width: 30%;
 			text-align: center;
+			display: none;
+
+			@media (#{$bp-larger-than-desktop}) {
+				display: inline-block;
+			}
 		}
 	}
 }
