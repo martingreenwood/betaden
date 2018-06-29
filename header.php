@@ -23,6 +23,7 @@
 <body <?php body_class($pagename); ?>>
 <div id="page" class="site">
 
+	<?php if (is_front_page()): ?>
 	<div class="alert">
 		<div class="box">
 			<div class="content">
@@ -33,6 +34,7 @@
 			</div>
 		</div>
 	</div>
+	<?php endif ?>
 
 	<header id="masthead" class="site-header">
 		<div class="container">
