@@ -124,7 +124,7 @@ img {
 	z-index: 3;
 
 	@media (#{$bp-larger-than-tablet}) {
-		margin-top: 860px;
+		margin-top: 900px;
 
 		background-size: 100% auto;
 		background-position: top center;
@@ -201,7 +201,7 @@ img {
 	left: 0;
 
 	@media (#{$bp-larger-than-tablet}) {
-		height: 860px;
+		height: 900px;
 	}
 
 	-webkit-transition: all .3s linear;	
