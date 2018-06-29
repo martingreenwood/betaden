@@ -14,19 +14,15 @@ get_header();
 	<div id="intro">
 
 		<div class="content">
-			<div class="table">
-				<div class="cell middle">
-					<div class="container">
-						<div class="row">
-							<?php
-							while ( have_posts() ) : the_post();
+			<div class="container">
+				<div class="row">
+					<?php
+					while ( have_posts() ) : the_post();
 
-								get_template_part( 'template-parts/content', 'page' );
+						get_template_part( 'template-parts/content', 'page' );
 
-							endwhile; // End of the loop.
-							?>
-						</div>
-					</div>
+					endwhile; // End of the loop.
+					?>
 				</div>
 			</div>
 		</div>
@@ -36,20 +32,16 @@ get_header();
 	<div id="location">
 
 		<div class="content">
-			<div class="table">
-				<div class="cell middle">
-					<div class="container">
-						<div class="row">
-							<div class="columns twelve">
-								<?php $location = get_field('location');
-								if( !empty($location) ):
-								?>
-								<div class="map">
-									<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
-								</div>
-								<?php endif; ?>
-							</div>
+			<div class="container">
+				<div class="row">
+					<div class="columns twelve">
+						<?php $location = get_field('location');
+						if( !empty($location) ):
+						?>
+						<div class="map">
+							<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
 						</div>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
