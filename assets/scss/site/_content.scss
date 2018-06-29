@@ -159,6 +159,12 @@ img {
 		border-right: 70vw solid transparent;
 
 		@media (#{$bp-larger-than-tablet}) {
+			top: -215px;
+			border-bottom: 222px solid white;
+			border-right: 80vw solid transparent;
+		}
+
+		@media (#{$bp-larger-than-desktop}) {
 			top: -315px;
 			border-bottom: 322px solid white;
 			border-right: 80vw solid transparent;
@@ -173,6 +179,12 @@ img {
 		width: 75%;
 
 		@media (#{$bp-larger-than-tablet}) {
+			top: -550px;
+			right: 0px;
+			width: 360px;
+		}
+
+		@media (#{$bp-larger-than-desktop}) {
 			top: -700px;
 			right: 40px;
 			width: 650px;
@@ -227,20 +239,6 @@ img {
 		border-right: 20vw solid transparent;
 	}
 
-	.hex {
-		z-index: 1;
-		position: relative;
-		display: inline-block;
-		vertical-align: middle;
-		width: 50%;
-
-		img {
-			margin-bottom: -9rem;
-			display: block;
-			margin-left: 50px;
-		}
-	}
-
 	.content {
 		position: relative;
 		display: inline-block;
@@ -258,14 +256,6 @@ img {
 		-ms-transition: all .3s linear;
 		-o-transition: all .3s linear;
 		transition: all .3s linear;
-
-		// @media (#{$bp-larger-than-tablet}) {
-		// 	width: 43%;
-		// }
-		
-		// @media (#{$bp-larger-than-desktop}) {
-		// 	width: 43%;
-		// }
 	}
 
 	.hero {
