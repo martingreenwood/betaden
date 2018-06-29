@@ -734,6 +734,11 @@ img {
 	background-repeat: no-repeat;
 
 	@media (#{$bp-larger-than-tablet}) {
+		background-image: url(assets/img/square-orange-trans.png);
+		background-position: -200px center;
+	}
+
+	@media (#{$bp-larger-than-desktop}) {
 		background-image: url(assets/img/square-orange.png);
 	}
 
