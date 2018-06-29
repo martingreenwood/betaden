@@ -48,7 +48,7 @@ get_header(); ?>
 									</a>
 								</li>
 								<li>
-									<a href="<?php echo home_url( 'mentoring' ); ?>" title="">
+									<a href="<?php echo home_url( 'mentors' ); ?>" title="">
 										<element>
 											<img src="<?php echo get_template_directory_uri(); ?>/assets/img/mentoring-hex.png" alt="">
 										</element>
