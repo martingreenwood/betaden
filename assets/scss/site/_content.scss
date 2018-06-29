@@ -1377,6 +1377,13 @@ img {
 			width: 100%;
 			text-align: left;
 			margin-top: 0;
+
+			.entry-content, .entry-image {
+				@media (#{$bp-smaller-than-desktop}) {
+					width: 100%;
+					margin: 0 0 2rem 0;
+				}
+			}
 		}
 	}
 
