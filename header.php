@@ -105,8 +105,6 @@
 								<?php if ( is_front_page() ): ?>
 									<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
 									<a href="<?php echo home_url( '/our-story' ); ?>" title="More Info">More Info</a>
-								<?php else: ?>
-									<a href="<?php echo home_url( '/apply' ); ?>" title="Apply online">Apply Now</a><br>
 								<?php endif; ?>
 							</div>
 
