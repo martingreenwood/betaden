@@ -889,6 +889,10 @@ img {
 			border-top: 2px solid $primary-color;
 			border-bottom: 2px solid $primary-color;
 
+			a {
+				display: block;
+			}
+
 			.navi {
 				display: inline-block;
 				width: 50%;
