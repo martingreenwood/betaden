@@ -813,7 +813,7 @@ img {
 			background-repeat: no-repeat;
 		}
 
-		@media (#{$bp-larger-than-tablet}) {
+		@media (#{$bp-larger-than-desktop}) {
 			background-image: url(assets/img/square-orange.png);
 			background-position: -200px center;
 			background-size: auto 100%;
