@@ -1227,9 +1227,14 @@ img {
 	}
 
 	#content {
-		margin-top: 100vh;
+		margin-top: 0;
+		padding: 120px 0;
 
-		.tri, .tri2 {
+		@media (#{$bp-larger-than-tablet}) {
+			padding: 250px 0 120px 0;
+		}
+
+		.tri, .tri2, .hex {
 			display: none;
 		}
 	}
@@ -1247,11 +1252,13 @@ img {
 		background-color: rgba($primary-color, 1);
 		background-image: url(assets/img/bg-clouds.jpg);
 		color: white;
-		position: fixed;
+		background-size: cover;
+		position: relative;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
+		min-height: 100vh;
 		z-index: 5;
 
 		.content {
@@ -1380,11 +1387,15 @@ img {
 	}
 
 	#colophon {
-		position: fixed;
+		position: relative;
 		bottom: 0;
 		width: 100%;
 		z-index: 6;
 		left: 0;
+
+		@media (#{$bp-larger-than-tablet}) {
+			position: fixed;
+		}
 	}
 }
 
