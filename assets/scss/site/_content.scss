@@ -346,7 +346,7 @@ img {
 		margin: 0 auto;
 		float: none;
 
-		@media (#{$bp-smaller-than-tablet}) {
+		@media (#{$bp-smaller-than-desktop}) {
 			width: 100%;
 		}
 	}
