@@ -1483,7 +1483,7 @@ img {
 				width: 100%;
 				text-align: center;
 
-				@media (#{$bp-larger-than-tablet}) {
+				@media (#{$bp-larger-than-desktop}) {
 					width: 70%;
 					padding-right: 4rem;
 					text-align: left;
@@ -1522,7 +1522,7 @@ img {
 				text-align: center;
 				display: none;
 
-				@media (#{$bp-larger-than-tablet}) {
+				@media (#{$bp-larger-than-desktop}) {
 					display: inline-block;
 				}
 			}
