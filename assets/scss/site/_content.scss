@@ -1228,11 +1228,6 @@ img {
 
 	#content {
 		margin-top: 0;
-		padding: 120px 0;
-
-		@media (#{$bp-larger-than-tablet}) {
-			padding: 250px 0 120px 0;
-		}
 
 		.tri, .tri2, .hex {
 			display: none;
@@ -1260,6 +1255,11 @@ img {
 		height: 100%;
 		min-height: 100vh;
 		z-index: 5;
+		padding: 120px 0;
+
+		@media (#{$bp-larger-than-tablet}) {
+			padding: 250px 0 120px 0;
+		}
 
 		.content {
 			height: 100%;
