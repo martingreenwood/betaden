@@ -61,7 +61,7 @@
 
 			li {
 			 	display: block;
-				line-height: 3;
+				line-height: 2;
 				width: 100%;
 				margin: 0 auto;
 				opacity: 0;
@@ -72,6 +72,14 @@
 				-o-transition: all .4s linear;
 				transition: all .4s linear;
 				transition-delay: 0s;
+
+				@media (#{$bp-larger-than-tablet}) {
+					line-height: 2.5;
+				}
+
+				@media (#{$bp-larger-than-desktop}) {
+					line-height: 3;
+				}
 
 				&.current_page_item {
 					background: white;
