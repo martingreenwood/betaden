@@ -1261,6 +1261,13 @@ img {
 			padding: 250px 0 120px 0;
 		}
 
+		@media (#{$bp-larger-than-desktophd}) {
+			padding: 0;
+			min-height: 100vh;
+			height: 100vh;
+
+		}
+
 		.content {
 			height: 100%;
 		}
@@ -1395,6 +1402,10 @@ img {
 
 		@media (#{$bp-larger-than-tablet}) {
 			// position: fixed;
+		}
+
+		@media (#{$bp-larger-than-desktophd}) {
+			position: fixed;
 		}
 	}
 }
