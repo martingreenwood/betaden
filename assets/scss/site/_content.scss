@@ -1670,3 +1670,14 @@ img {
 		}
 	}
 }
+
+
+.single-post {
+	.row {
+		box-sizing: border-box;
+		
+		@media (#{$bp-larger-than-tablet}) {
+			padding: 0 4rem;
+		}
+	}
+}
