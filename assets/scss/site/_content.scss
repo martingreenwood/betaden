@@ -1678,6 +1678,11 @@ img {
 
 
 .single-post {
+
+	.post-navigation {
+		display: none;
+	}
+
 	.row {
 		box-sizing: border-box;
 		
