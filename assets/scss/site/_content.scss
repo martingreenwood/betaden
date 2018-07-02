@@ -774,6 +774,7 @@ img {
 
 	.row {
 		box-sizing: border-box;
+		padding: 0 1rem;
 
 		@media (#{$bp-larger-than-tablet}) {
 			padding: 0 4rem;
