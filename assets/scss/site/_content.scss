@@ -1258,13 +1258,19 @@ img {
 		padding: 120px 0;
 
 		@media (#{$bp-larger-than-tablet}) {
-			padding: 250px 0 120px 0;
-		}
-
-		@media (#{$bp-larger-than-desktophd}) {
 			padding: 0;
 			min-height: 100vh;
 			height: 100vh;
+		}
+
+		@media (#{$bp-larger-than-desktop}) {
+			// padding: 250px 0 120px 0;
+		}
+
+		@media (#{$bp-larger-than-desktophd}) {
+			// padding: 0;
+			// min-height: 100vh;
+			// height: 100vh;
 
 		}
 
