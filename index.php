@@ -35,9 +35,9 @@ get_header(); ?>
 				endif; ?>
 
 
-				<div class="row">
-					<?php the_posts_navigation(); ?>
-				</div>
+				<!-- <div class="row">
+					<?php //the_posts_navigation(); ?>
+				</div> -->
 			
 			</div>
 		</main>
