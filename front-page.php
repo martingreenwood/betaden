@@ -164,14 +164,14 @@ get_header(); ?>
 							<p><a class="more" target="_blank" href="<?php echo $website; //the_permalink(); ?>" title="Read More">View Event</a></p>
 						</div><!--
 						--><div class="thumb">
-							<?php 
-							if (has_post_thumbnail( get_the_ID() )) {
-								$blogImg = get_the_post_thumbnail_url( get_the_ID(), 'full' ); 
-							} else {
-								$blogImg = get_stylesheet_directory_uri() . '/assets/img/bg-clouds.jpg';
-							}
-							?>
-							<element style="background-image: url(<?php echo $blogImg; ?>);">
+								<?php 
+								if (has_post_thumbnail( get_the_ID() )) {
+									$blogImg = get_the_post_thumbnail_url( get_the_ID(), 'full' ); 
+								} else {
+									$blogImg = get_stylesheet_directory_uri() . '/assets/img/bg-clouds.jpg';
+								}
+								?>
+								<div class="element" style="background-image: url(<?php echo $blogImg; ?>);"></div>
 							</div>
 						</div>
 
