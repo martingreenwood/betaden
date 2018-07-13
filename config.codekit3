@@ -584,6 +584,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/assets\/js\/svgconvert-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/svgconvert-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/assets\/js\/svgconvert.js": {
 		"ft": 64,
 		"ma": 0,
