@@ -162,39 +162,4 @@ function eraseCookie(name) {
 		$header.toggleClass('shorty', $document.scrollTop() >= 1);
 	});
 
-	// $document.scroll(function() {
-	// 	//$element.toggleClass('fixed', $document.scrollTop() >= $(window).height());
-	// 	$element.toggleClass('fixed', $document.scrollTop() >= 400);
-	// });
-
 })(jQuery);
-
-/*===============================
-=            BANNER             =
-===============================*/
-
-// (function($) {
-
-// 	$('#banner .table').each(function(){
-// 		var headerHeight = $('#masthead').height();
-// 		$(this).css('padding-top', headerHeight+'px');
-// 	});
-
-// })(jQuery);
-
-/*===================================
-=            ORIENTATION            =
-===================================*/
-
-// jQuery(window).on("orientationchange",function($){
-// 	if(window.orientation == 0) // Portrait
-// 	{
-// 		$('#turnme').removeClass('show');
-// 		$('body').removeClass('disablescroll');
-// 	}
-// 	else // Landscape
-// 	{
-// 		$('#turnme').addClass('show');
-// 		$('body').addClass('disablescroll');
-// 	}
-// });
