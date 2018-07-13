@@ -230,6 +230,182 @@
 		"oAP": "\/assets\/fonts\/gotham-rounded-medium.woff2",
 		"oF": 0
 		},
+	"\/assets\/img\/alertbg.jpg": {
+		"ft": 16384,
+		"iS": 83986,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/assets\/img\/alertbg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/assets\/img\/bg-clouds.jpg": {
+		"ft": 16384,
+		"iS": 49983,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/assets\/img\/bg-clouds.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/assets\/img\/big-square-arange.jpg": {
+		"ft": 16384,
+		"iS": 12049,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/assets\/img\/big-square-arange.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/assets\/img\/diagonal.png": {
+		"ft": 32768,
+		"iS": 13061,
+		"oA": 0,
+		"oAP": "\/assets\/img\/diagonal.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/events-hex.png": {
+		"ft": 32768,
+		"iS": 180554,
+		"oA": 0,
+		"oAP": "\/assets\/img\/events-hex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/hexagon-header.png": {
+		"ft": 32768,
+		"iS": 208344,
+		"oA": 0,
+		"oAP": "\/assets\/img\/hexagon-header.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/Hexagon1.png": {
+		"ft": 32768,
+		"iS": 120945,
+		"oA": 0,
+		"oAP": "\/assets\/img\/Hexagon1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/Hexagon2.png": {
+		"ft": 32768,
+		"iS": 149050,
+		"oA": 0,
+		"oAP": "\/assets\/img\/Hexagon2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/location-hex.png": {
+		"ft": 32768,
+		"iS": 137312,
+		"oA": 0,
+		"oAP": "\/assets\/img\/location-hex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/marker.png": {
+		"ft": 32768,
+		"iS": 12570,
+		"oA": 0,
+		"oAP": "\/assets\/img\/marker.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/mentoring-hex.png": {
+		"ft": 32768,
+		"iS": 147756,
+		"oA": 0,
+		"oAP": "\/assets\/img\/mentoring-hex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/mid-section.jpg": {
+		"ft": 16384,
+		"iS": 21602,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/assets\/img\/mid-section.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/assets\/img\/mid-section.png": {
+		"ft": 32768,
+		"iS": 19543,
+		"oA": 0,
+		"oAP": "\/assets\/img\/mid-section.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/mobile-bg.png": {
+		"ft": 32768,
+		"iS": 10024,
+		"oA": 0,
+		"oAP": "\/assets\/img\/mobile-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/orange-halfhex.png": {
+		"ft": 32768,
+		"iS": 7391,
+		"oA": 0,
+		"oAP": "\/assets\/img\/orange-halfhex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/orange-otherhalfhex.png": {
+		"ft": 32768,
+		"iS": 7429,
+		"oA": 0,
+		"oAP": "\/assets\/img\/orange-otherhalfhex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/img\/partners-hex.png": {
 		"ft": 32768,
 		"iS": 544489,
@@ -239,6 +415,83 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/slash.png": {
+		"ft": 32768,
+		"iS": 2343,
+		"oA": 0,
+		"oAP": "\/assets\/img\/slash.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/slash2.png": {
+		"ft": 32768,
+		"iS": 2317,
+		"oA": 0,
+		"oAP": "\/assets\/img\/slash2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/slash3.png": {
+		"ft": 32768,
+		"iS": 2322,
+		"oA": 0,
+		"oAP": "\/assets\/img\/slash3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/square-orange-trans.png": {
+		"ft": 32768,
+		"iS": 9432,
+		"oA": 0,
+		"oAP": "\/assets\/img\/square-orange-trans.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/square-orange.png": {
+		"ft": 32768,
+		"iS": 15418,
+		"oA": 0,
+		"oAP": "\/assets\/img\/square-orange.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/story-hex.png": {
+		"ft": 32768,
+		"iS": 151638,
+		"oA": 0,
+		"oAP": "\/assets\/img\/story-hex.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/tech.jpg": {
+		"ft": 16384,
+		"iS": 64509,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/assets\/img\/tech.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"\/assets\/js\/base-min.js": {
@@ -328,6 +581,16 @@
 		"oA": 1,
 		"oAP": "\/assets\/js\/skip-link-focus-fix-min.js",
 		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/assets\/js\/svgconvert.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/svgconvert-min.js",
+		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
