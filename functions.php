@@ -153,3 +153,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+add_action( 'send_headers', 'betaden_strict_transport_security' );
+/**
+ * Enables the HTTP Strict Transport Security (HSTS) header.
+ *
+ * @since 1.0.0
+ */
+function betaden_strict_transport_security() {
+ 
+    header( 'Strict-Transport-Security: max-age=10886400; includeSubDomains; preload' );
+ 
+}
