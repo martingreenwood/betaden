@@ -66,8 +66,7 @@ get_header(); ?>
 
 						$testimonials = new WP_Query( $args );
 						if( $testimonials->have_posts() ) :
-						?>
-						<?php
+
 							while( $testimonials->have_posts() ) : $testimonials->the_post();
 								
 								$event_id = get_the_ID();
@@ -116,7 +115,10 @@ get_header(); ?>
 							<?php
 							endwhile;
 							wp_reset_postdata();
-							?>
+						else: ?>
+						<div class="noshows">
+							<h3>No events currently scheduled, please check back soon.</h3>
+						</div>
 					<?php endif; ?>
 				</div>
 			</div>

@@ -25,6 +25,17 @@ input.tml-button {
 	font-size: 16px;
 }
 
+.noshows {
+    border-top: 2px solid $primary-color;
+    border-bottom: 2px solid $primary-color;
+    text-align: center;
+
+    h3 {
+    	margin: 0;
+		line-height: 3;
+    }
+}
+
 .alert {
 	position: fixed;
 	top: 50;
