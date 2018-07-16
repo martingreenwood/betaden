@@ -117,7 +117,7 @@ get_header(); ?>
 							wp_reset_postdata();
 						else: ?>
 						<div class="noshows">
-							<h3>No events currently scheduled, please check back soon.</h3>
+							<h3>There are currently no scheduled events, please check back soon.</h3>
 						</div>
 					<?php endif; ?>
 				</div>
