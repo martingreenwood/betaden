@@ -554,14 +554,24 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/assets\/js\/navigation-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/navigation-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/assets\/js\/navigation.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/assets\/js\/navigation-min.js",
 		"oF": 1,
-		"sC": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/assets\/js\/parallax.js": {
