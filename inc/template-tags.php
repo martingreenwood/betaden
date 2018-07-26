@@ -228,8 +228,8 @@ add_action('send_headers', function(){
 	// Prevent Clickjacking
 	header("X-Frame-Options: SAMEORIGIN");
 	// Prevent XSS Attack
-	header("Content-Security-Policy: default-src 'self';"); // FF 23+ Chrome 25+ Safari 7+ Opera 19+
-	header("X-Content-Security-Policy: default-src 'self';"); // IE 10+
+	// header("Content-Security-Policy: default-src 'self';"); // FF 23+ Chrome 25+ Safari 7+ Opera 19+
+	// header("X-Content-Security-Policy: default-src 'self';"); // IE 10+
 	// Block Access If XSS Attack Is Suspected
 	header("X-XSS-Protection: 1; mode=block");
 	// Prevent MIME-Type Sniffing
