@@ -36,12 +36,12 @@
 			$tweet_time = strtotime($tweet_time);
 			$now = time();
 			$text = $tweet->text;
-			$text = preg_replace('/(?:^|\s)#(\w+)/', ' <a target="_blank" href="https://twitter.com/hashtag/$1?src=hash">#$1</a>', $text);
+			$text = preg_replace('/(?:^|\s)#(\w+)/', ' <a href="https://twitter.com/hashtag/$1?src=hash">#$1</a>', $text);
 			// $text now: Vivamus <a href="tag/tristique">tristique</a> non elit eu iaculis;
 		?>
 		<div class="tweet" data-time="<?php echo $tweet_time; ?>">
 			<p><?php echo $text; ?></p>
-			<p class="date">Posted <?php echo ShowDate($tweet_time); ?>. <a href="https://twitter.com/BetaDenUK" target="_blank" title="follow us on twitter">Follow us on Twitter</a></p>
+			<p class="date">Posted <?php echo ShowDate($tweet_time); ?>. <a href="https://twitter.com/BetaDenUK" target="_blank" rel="noopener" title="follow us on twitter">Follow us on Twitter</a></p>
 		</div>
 		<?php //$tc++; ?>
 	<?php endforeach;

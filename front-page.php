@@ -161,7 +161,7 @@ get_header(); ?>
 							$content = get_the_content();
 							echo wp_trim_words( $content , '40' ); 
 							?></p>
-							<p><a class="more" target="_blank" href="<?php echo $website; //the_permalink(); ?>" title="Read More">View Event</a></p>
+							<p><a class="more" target="_blank" rel="noopener" href="<?php echo $website; //the_permalink(); ?>" title="Read More">View Event</a></p>
 						</div><!--
 						--><div class="thumb">
 								<?php 
@@ -194,7 +194,7 @@ get_header(); ?>
 					<div class="container">
 						<div class="row">
 							<div class="columns two">
-								<a href="https://twitter.com/BetaDenUK" target="_blank">
+								<a href="https://twitter.com/BetaDenUK" target="_blank" rel="noopener">
 									<i class="fab fa-twitter"></i>
 								</a>
 							</div>

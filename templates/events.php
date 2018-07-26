@@ -103,7 +103,7 @@ get_header(); ?>
 									$content = get_the_content();
 									echo wp_trim_words( $content , '40' ); 
 									?></p>
-									<p><a class="more" target="_blank" href="<?php echo $website; //the_permalink(); ?>" title="Read More">View Event</a></p>
+									<p><a class="more" target="_blank" rel="noopener" href="<?php echo $website; //the_permalink(); ?>" title="Read More">View Event</a></p>
 								</div><!--
 								--><div class="thumb">
 									<?php $blogImg = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
