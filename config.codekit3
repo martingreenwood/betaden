@@ -230,6 +230,28 @@
 		"oAP": "\/assets\/fonts\/gotham-rounded-medium.woff2",
 		"oF": 0
 		},
+	"\/assets\/img\/15k-icon.png": {
+		"ft": 32768,
+		"iS": 18357,
+		"oA": 0,
+		"oAP": "\/assets\/img\/15k-icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/5G-icon.png": {
+		"ft": 32768,
+		"iS": 15758,
+		"oA": 0,
+		"oAP": "\/assets\/img\/5G-icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/img\/alertbg.jpg": {
 		"ft": 16384,
 		"iS": 83986,
@@ -340,6 +362,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/img\/mentor-icon.png": {
+		"ft": 32768,
+		"iS": 28866,
+		"oA": 0,
+		"oAP": "\/assets\/img\/mentor-icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/img\/mentoring-hex.png": {
 		"ft": 32768,
 		"iS": 147756,
@@ -378,6 +411,17 @@
 		"iS": 10024,
 		"oA": 0,
 		"oAP": "\/assets\/img\/mobile-bg.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/office-icon.png": {
+		"ft": 32768,
+		"iS": 11745,
+		"oA": 0,
+		"oAP": "\/assets\/img\/office-icon.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

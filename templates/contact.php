@@ -92,5 +92,29 @@ get_header();
 	
 	</div>
 
+	<div id="location">
+
+		<div class="content">
+			<div class="container">
+				<div class="row">
+					<div class="columns three">
+						<h3>Visit Us</h3>
+						<p><?php the_field( 'address' ); ?></p>
+					</div>
+					<div class="columns nine">
+						<?php $location = get_field('location');
+						if( !empty($location) ):
+						?>
+						<div class="map">
+							<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+						</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+	</div>
+
 <?php
 get_footer();

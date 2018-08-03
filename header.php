@@ -68,6 +68,7 @@
 							<span class="hamburger-inner"></span>
 						</span>
 					</button>
+					<a class="quickapply" href="<?php echo home_url( 'apply' ); ?>" title="">Apply Online</a>
 					<div class="menu-wrap">
 						<div class="table">
 							<div class="cell middle">

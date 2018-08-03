@@ -14,6 +14,15 @@
 		</div><!-- .conmtainer -->
 	</div><!-- #content -->
 
+	<div class="signmeupman" style="display: none;">
+		<div class="container">
+			<div class="row">
+				<h3>Sign up for BetaDen updates</h3>
+				<?php echo do_shortcode( '[gravityform id="3" title="false" description="false" ajax="true"]' ); ?>
+			</div>
+		</div>
+	</div>
+
 	<footer id="colophon" class="site-footer">
 		
 		<div class="footer">
