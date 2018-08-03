@@ -127,6 +127,9 @@ img {
 	margin-bottom: 120px;
 	text-align: center;
 
+	@media (#{$bp-larger-than-tablet}) {
+	}
+
 	h2 {
 		font-size: 4rem;
 		text-transform: capitalize;
@@ -135,7 +138,7 @@ img {
 	}
 
 	ul li {
-		width: 100%;
+		width: 50%;
 		box-sizing: border-box;
 		margin: 0 0 2rem 0;
 		display: inline-block;
