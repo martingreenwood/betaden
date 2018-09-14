@@ -108,3 +108,28 @@ label > .label-body {
     transform: rotate(360deg);
   }
 }
+
+
+input#choice_2_7_1 {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px !important;
+  height: 24px;
+  background: white;
+  border: 1px solid #ccc;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+
+  &:checked {
+    border-color: $primary-color;
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNv…UtMC4xLTAuNy0wLjNsLTcuOC04LjQtLjItLjN6IiBmaWxsPSIjZjI2NTIyIi8+Cjwvc3ZnPgo=) !important;
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.gform_wrapper ul.gfield_checkbox li label, .gform_wrapper ul.gfield_radio li label {
+  vertical-align: middle;
+}
